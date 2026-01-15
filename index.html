@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    
+    <title>スマブラ部 - 64 STYLE</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           カスタマイズ設定 (RETRO FIGHTING GAME THEME)
+           ========================================= */
+        :root {
+            --bg-color: #1a1a1a; /* Dark Grey like stone/brick */
+            /* Retro Fighting Game Gradients */
+            --chrome: linear-gradient(180deg, #fff 0%, #ddd 40%, #bbb 50%, #999 51%, #fff 100%);
+            --fire-red: #e60012;
+            --fighter-orange: #ff6600;
+            --victory-gold: #ffcc00;
+            
+            /* Mapping old vars to new theme for compatibility */
+            --theme-accent: var(--victory-gold);
+            --theme-hot: var(--fire-red);
+            --theme-gradient: linear-gradient(45deg, var(--fire-red), var(--victory-gold));
+        }
+
+        /* =========================================
+           基本スタイル
+           ========================================= */
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 50%, #330000 0%, var(--bg-color) 80%),
+                linear-gradient(0deg, rgba(255,102,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,0,0,0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            color: #fff;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid #555;
+            border-radius: 4px; /* Slightly sharper corners */
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(255, 100, 0, 0.3); /* Orange glow */
+            padding: 2rem;
+            position: relative;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        @keyframes popIn {
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Hero Area (Header) Customization */
+        header {
+            position: relative;
+            /* Negative margin to stretch full width of container */
+            margin: -2rem -2rem 0 -2rem;
+            padding: 5rem 1rem;
+            /* Background Image (Unsplash Placeholder) */
+            background-image: url('./image/Gemini_Generated_Image_v3n2vkv3n2vkv3n2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px 4px 0 0;
+            z-index: 1;
+            border-bottom: 4px solid var(--fire-red); /* Stronger border */
+        }
+        /* Overlay for text readability */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.8); /* Darker overlay */
+            z-index: -1;
+            backdrop-filter: blur(2px);
+        }
+
+        h1 {
+            font-family: 'Audiowide', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 0;
+            background: linear-gradient(180deg, #fff 0%, #ffcc00 50%, #e60012 100%); /* Gold/Red Title */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px var(--fire-red));
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: var(--theme-gradient); /* Red/Yellow Gradient */
+            color: #000;
+            font-weight: bold;
+            padding: 5px 20px;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: 'Audiowide';
+            transform: skew(-15deg);
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px var(--fighter-orange);
+            border: 1px solid #fff;
+        }
+
+        /* アイコン画像のスタイル修正 */
+        .planet-icon {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            /* 画像コンテナとして機能させる */
+            width: 60px;  /* 好みのサイズに変更可能 */
+            height: 60px;
+            animation: spin 10s linear infinite;
+        }
+        
+        .planet-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.8)); /* 金色の光彩 */
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Latest Info Banner (Challenger Style) */
+        .challenger-banner {
+            display: block;
+            margin: 0 -2rem 3rem -2rem; /* Full width */
+            background: repeating-linear-gradient(
+                45deg,
+                #300,
+                #300 10px,
+                #500 10px,
+                #500 20px
+            );
+            color: #fff;
+            text-decoration: none;
+            padding: 1.5rem 1rem;
+            border-top: 3px solid var(--fire-red);
+            border-bottom: 3px solid var(--fire-red);
+            position: relative;
+            overflow: hidden;
+            animation: alertBlink 4s infinite;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .challenger-banner:hover {
+            transform: scale(1.02);
+            filter: brightness(1.3);
+            z-index: 10;
+        }
+        @keyframes alertBlink {
+            0%, 90%, 100% { box-shadow: 0 0 10px var(--fire-red); border-color: var(--fire-red); }
+            95% { box-shadow: 0 0 30px var(--fire-red), inset 0 0 30px var(--fire-red); border-color: var(--victory-gold); background-color: #800; }
+        }
+        .banner-title {
+            font-family: 'Audiowide', cursive;
+            font-size: 1.4rem; /* Adjusted size slightly */
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            color: var(--victory-gold);
+            text-shadow: 2px 2px 0px #000;
+        }
+        .banner-sub {
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            background: #000;
+            color: #fff;
+            padding: 4px 16px;
+            display: inline-block;
+            transform: skew(-15deg);
+            border: 1px solid var(--victory-gold);
+        }
+
+        /* ギャラリーレイアウト */
+        .gallery-grid {
+            display: grid;
+            /* PCでは2個ずつにする */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .work-item {
+            position: relative;
+            border: 2px solid #555;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s;
+            aspect-ratio: 1;
+            background: #111;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            animation: fadeIn 0.5s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .work-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px var(--fighter-orange);
+            border-color: var(--victory-gold);
+            z-index: 2;
+        }
+
+        .work-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .work-item:hover .work-img {
+            transform: scale(1.1);
+        }
+
+        /* Grid Text Visibility Improvements */
+        .work-title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.9); /* Almost black */
+            padding: 12px 10px;
+            font-size: 1.1rem; /* Large Font */
+            font-weight: 700; /* Bold */
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            color: var(--victory-gold); /* Gold text */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-top: 2px solid var(--fire-red); /* Red Accent */
+            text-shadow: 0 2px 4px #000;
+        }
+
+        .y2k-btn {
+            display: inline-block;
+            background: var(--chrome);
+            color: #000;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-family: 'Audiowide';
+            margin: 0.5rem;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px var(--victory-gold);
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .y2k-btn:hover {
+            filter: brightness(1.2);
+            background: var(--victory-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--fighter-orange);
+        }
+
+        .text-section {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px dashed var(--fighter-orange);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 4rem 0;
+            text-align: left;
+            position: relative;
+        }
+        .text-section::before {
+            content: "INFO";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #000;
+            padding: 0 10px;
+            font-family: 'Audiowide';
+            font-size: 0.8rem;
+            color: var(--victory-gold);
+            border: 1px solid var(--fighter-orange);
+            border-radius: 4px;
+        }
+        /* アクセス情報用のラベル上書き */
+        .text-section.access-mode::before {
+            content: "STAGE";
+        }
+        
+        .text-section h3 {
+            font-family: 'Audiowide';
+            color: var(--victory-gold);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--fire-red);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            text-shadow: 1px 1px 0 #330000;
+        }
+        .text-section p {
+            line-height: 1.9;
+            color: #eee;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        /* Highlight specific keywords in text */
+        .highlight {
+            color: var(--victory-gold);
+            font-weight: bold;
+        }
+
+        /* アクセスマップ用のスタイル */
+        .access-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .access-map iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            border: 1px solid var(--fire-red);
+            /* Warm dark map filter */
+            filter: invert(90%) sepia(20%) hue-rotate(330deg) contrast(0.9);
+        }
+
+        @media (min-width: 768px) {
+            .access-content-wrapper {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .access-text {
+                flex: 1;
+            }
+            .access-map {
+                flex: 1;
+            }
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            padding: 1rem;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-win {
+            background: linear-gradient(135deg, #222, #000);
+            border: 2px solid var(--victory-gold);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 30px var(--fire-red);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transform: scaleX(0.01) scaleY(0);
+            opacity: 0;
+        }
+
+        .modal.active .modal-win {
+            animation: tvOn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            animation-delay: 0.1s;
+        }
+
+        @keyframes tvOn {
+            0% { transform: scaleX(0.01) scaleY(0); opacity: 1; }
+            50% { transform: scaleX(1) scaleY(0.01); opacity: 1; }
+            100% { transform: scaleX(1) scaleY(1); opacity: 1; }
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 50vh;
+            border-radius: 4px;
+            border: 1px solid #fff;
+            object-fit: contain;
+            margin: 0 auto;
+            background: #000;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem 1rem; }
+            h1 { font-size: 4rem; }
+            .modal-win { padding: 15px; width: 95%; }
+            .gallery-grid {
+                /* スマホでは1個ずつ縦積みにする */
+                grid-template-columns: 1fr;
+            }
+            /* Banner Font Adjustment for Mobile */
+            .banner-title { font-size: 1.1rem; }
+            .banner-sub { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header-icon" class="planet-icon"></div>
+            
+            <h1 id="user-name"></h1>
+            <div id="user-role" class="role-badge"></div>
+            <p id="user-bio" style="margin: 1.5rem 0; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px #000;"></p>
+        </header>
+        
+        <a href="https://x.com/home" class="challenger-banner" target="_blank" rel="noopener noreferrer">
+            <span class="banner-title">【緊急指令】新たな挑戦者を求む！</span>
+            <span class="banner-sub">毎週金曜、乱闘開始。エントリーはこちら ▷</span>
+        </a>
+        
+        <h2 style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red);">// バトルモード選択</h2>
+        
+        <div id="gallery-grid" class="gallery-grid"></div>
+
+        <div id="free-text-area"></div>
+        
+        <div style="margin-top: 4rem;">
+            <div id="links-list"></div>
+            <p style="margin-top: 2rem; font-size: 0.7rem; font-family: 'Audiowide'; opacity: 0.8;">
+                COPYRIGHT © <span id="year"></span> <span id="footer-name"></span>.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-win" id="modal-win" onclick="event.stopPropagation()">
+            <h2 id="modal-title" style="font-family:'Audiowide'; margin-top:0; color:var(--victory-gold); font-size: 1.2rem; margin-bottom: 1rem; text-shadow: 1px 1px 0 #000;"></h2>
+            <img id="modal-img" class="modal-img" src="" alt="Work Detail">
+            <p id="modal-cat" style="font-family:'Audiowide'; color:#ccc; font-size: 0.9rem; margin-top: 1rem;"></p>
+            <button onclick="closeModal()" class="y2k-btn" style="cursor:pointer; width:auto; margin:1rem auto 0; font-size: 0.8rem; padding: 8px 24px;">CLOSE</button>
+        </div>
+    </div>
+
+    <script>
+        const config = {
+            // ▼ ここでヘッダーのアイコン画像を指定します ▼
+            iconImage: "./image/takana.png", 
+
+            name: "スマブラ部",
+            role: "N64スタイル・ガチ対戦",
+            bio: "集え、かつての子供たちよ。<br><strong style='color:var(--victory-gold)'>1999年の熱狂</strong>が、今ふたたび幕を開ける。",
+            
+            freeArea: {
+                title: "// プレイヤー・スピリット",
+                content: `
+                    <h4 style="margin:0 0 10px 0; color:var(--victory-gold); font-size:1.1rem;">なぜ、今「64」なのか？</h4>
+                    最新作がどれほど進化しようとも、我々の魂は「64」にある。<br>
+                    あの独特のヒットストップ、3Dスティックの感触、そしてシンプルな読み合いの奥深さ。この<span class="highlight">「原点」</span>こそが至高であると信じる者のためのアジト、それがスマブラ部だ。<br><br>
+                    ブランク？ 関係ない。コントローラーを握れば、あの頃の感覚が蘇るはずだ。準備はいいか？ 画面の向こうで、<span class="highlight">まだ見ぬ強敵</span>が待っている。
+                `
+            },
+
+            // アクセス情報 (提供された画像データを元に作成)
+            access: {
+                title: "// ステージ情報（アクセス）",
+                content: `
+                    <strong>会場：リッチダイヤモンド内</strong><br>
+                    〒400-0867 山梨県甲府市青沼3丁目5-44<br>
+                    電話番号：070-9446-5411<br>
+                    <br>
+                    <strong>駐車場</strong><br>
+                    無料駐車場有<br>
+                    <br>
+                    <strong>公共交通機関でお越しの方</strong><br>
+                    ●JR甲府駅バスターミナルより<br>
+                    ・5番のりば (山梨交通/富士急行) → 「総合市民会館」下車<br>
+                    ・3番のりば (山梨交通) → 「太田町見付」下車<br>
+                    ●JR身延線 南甲府駅から徒歩15分<br>
+                    <br>
+                    <strong>お車でお越しの方</strong><br>
+                    ・甲府南ICから約20分<br>
+                    ・甲府昭和ICから約15分
+                `,
+                // Google Maps Embed (甲府市青沼3丁目5-44)
+                map: `<iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%94%B2%E5%BA%9C%E5%B8%82%E9%9D%92%E6%B2%BC3%E4%B8%81%E7%9B%AE5-44&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
+            },
+
+            works: [
+                { file: "image1.jpg", title: "ウィークリー・マッチ", category: "毎週金曜、定期対戦会開催。ガチ1on1メイン。" },
+                { file: "image2.jpg", title: "部内トーナメント（半年毎）",  category: "半年間の総決算。部の頂点「最強」の称号をかけた真剣勝負。" },
+                { file: "image3.jpg", title: "テクニック・トレーニング", category: "0%即死コンボ、Zキャンセル、ベクトル反転。64特有の深淵なる技術を伝授。" },
+                { file: "image4.jpg", title: "アフター・バトル（交流会）", category: "戦いの後はノーサイド。飲み会を通じて結束を深める。" },
+            ],
+
+            links: [
+                { label: "X / Twitter", url: "https://twitter.com" }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // ▼ アイコン画像の差し替え処理 ▼
+            const iconContainer = document.getElementById('header-icon');
+            if (config.iconImage) {
+                const img = document.createElement('img');
+                img.src = config.iconImage;
+                img.alt = "Header Icon";
+                iconContainer.appendChild(img);
+            } else {
+                iconContainer.textContent = "🪐"; // 画像設定がない場合のフォールバック
+            }
+
+            document.getElementById('user-name').textContent = config.name;
+            document.getElementById('footer-name').textContent = config.name;
+            document.getElementById('user-role').textContent = config.role;
+            document.getElementById('user-bio').innerHTML = config.bio;
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const freeAreaEl = document.getElementById('free-text-area');
+            if (config.freeArea && config.freeArea.title && config.freeArea.content) {
+                const section = document.createElement('div');
+                section.className = 'text-section';
+                section.innerHTML = `
+                    <h3>${config.freeArea.title}</h3>
+                    <p>${config.freeArea.content}</p>
+                `;
+                freeAreaEl.appendChild(section);
+            }
+
+            // アクセス情報の追加
+            if (config.access && config.access.title && config.access.content) {
+                const section = document.createElement('div');
+                section.className = 'text-section access-mode'; // クラスを追加
+                
+                // 地図がある場合は表示
+                const mapHtml = config.access.map ? `<div class="access-map">${config.access.map}</div>` : '';
+                
+                section.innerHTML = `
+                    <h3>${config.access.title}</h3>
+                    <div class="access-content-wrapper">
+                        <div class="access-text">${config.access.content}</div>
+                        ${mapHtml}
+                    </div>
+                `;
+                // フリーテキストエリアの後に追加
+                freeAreaEl.after(section);
+            }
+
+            const grid = document.getElementById('gallery-grid');
+            const maxItems = 18;
+
+            for (let i = 1; i <= maxItems; i++) {
+                const workConfig = config.works[i - 1] || {};
+                const fileName = workConfig.file ? workConfig.file : `image${i}.jpg`;
+                const imgPath = `image/${fileName}`;
+                const title = workConfig.title ? workConfig.title : `Work ${i}`;
+                const category = workConfig.category ? workConfig.category : 'Gallery';
+
+                const div = document.createElement('div');
+                div.className = 'work-item';
+                div.style.display = 'none'; // 初期状態は非表示
+                
+                div.innerHTML = `
+                    <img src="${imgPath}" class="work-img" alt="${title}" 
+                         onload="this.parentElement.style.display=''" 
+                         onerror="this.parentElement.remove()">
+                    <div class="work-title-overlay">${title}</div>
+                `;
+                
+                div.onclick = () => openModal({ title, category }, imgPath);
+                grid.appendChild(div);
+            }
+
+            const linkList = document.getElementById('links-list');
+            config.links.forEach(link => {
+                if(!link.label) return;
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.className = 'y2k-btn';
+                a.textContent = link.label;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                linkList.appendChild(a);
+            });
+        });
+
+        const modal = document.getElementById('modal');
+        
+        function openModal(work, imgPath) {
+            document.getElementById('modal-img').src = imgPath;
+            document.getElementById('modal-title').textContent = work.title;
+            document.getElementById('modal-cat').textContent = `${work.category}`;
+            
+            modal.classList.remove('active');
+            void modal.offsetWidth; 
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
