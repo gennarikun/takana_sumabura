@@ -1,13 +1,23 @@
 <!DOCTYPE html>
+<!--
+  Template: Y2K v1.0 -> 64-FIGHTER v1.0
+  Author: Haruki Tominaga
+  License: https://amix-design.com/tominaga/eyan-theme/license 
+  © 2025 EYAN / トミナガハルキ
+-->
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
+    <link rel="icon" href="./image/takana.png" type="image/png">
+    <link rel="apple-touch-icon" href="./image/takana.png">
     
     <title>スマブラ部 - 64 STYLE</title>
     
+    <!-- Added font weight 700 for bold text -->
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* =========================================
@@ -30,6 +40,15 @@
         /* =========================================
            基本スタイル
            ========================================= */
+        html {
+            font-size: 16px; /* SP Base Size */
+        }
+        @media (min-width: 768px) {
+            html {
+                font-size: 18px; /* PC Base Size */
+            }
+        }
+
         body {
             background-color: var(--bg-color);
             background-image: 
@@ -44,6 +63,8 @@
             min-height: 100vh;
             text-align: center;
             overflow-x: hidden;
+            padding-bottom: 80px; /* Floating button space */
+            line-height: 1.6;
         }
 
         .container {
@@ -65,13 +86,40 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* =========================================
+           SCROLL REVEAL ANIMATION
+           ========================================= */
+        .scroll-reveal {
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: opacity, transform;
+        }
+        /* 下から浮き上がる */
+        .scroll-reveal.from-bottom {
+            transform: translateY(30px);
+        }
+        /* 左からスライドイン（見出し等） */
+        .scroll-reveal.from-left {
+            transform: translateX(-50px);
+        }
+        /* ズームイン（画像やカード等） */
+        .scroll-reveal.zoom-in {
+            transform: scale(0.9);
+        }
+        
+        /* アクティブ状態（表示） */
+        .reveal-active {
+            opacity: 1;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
         /* Hero Area (Header) Customization */
         header {
             position: relative;
             /* Negative margin to stretch full width of container */
             margin: -2rem -2rem 0 -2rem;
             padding: 5rem 1rem;
-            /* Background Image (Unsplash Placeholder) */
+            /* Background Image (Unsplash Placeholder - Retro Arcade) */
             background-image: url('./image/Gemini_Generated_Image_v3n2vkv3n2vkv3n2.png');
             background-size: cover;
             background-position: center;
@@ -79,12 +127,17 @@
             z-index: 1;
             border-bottom: 4px solid var(--fire-red); /* Stronger border */
         }
+        @media (min-width: 768px) {
+          header {
+            background-position: center bottom -120px;
+          }
+        }
         /* Overlay for text readability */
         header::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.8); /* Darker overlay */
+            background: rgba(0, 0, 0, 0.6); /* Darker overlay */
             z-index: -1;
             backdrop-filter: blur(2px);
         }
@@ -111,34 +164,25 @@
             margin: 1rem 0;
             font-family: 'Audiowide';
             transform: skew(-15deg);
-            font-size: 0.9rem;
+            font-size: 1rem; /* Increased size */
             box-shadow: 0 0 10px var(--fighter-orange);
             border: 1px solid #fff;
         }
 
-        /* アイコン画像のスタイル修正 */
-        .planet-icon {
+        .takana-icon {
+            height: 2.8rem;
+            width: auto;
             display: inline-block;
             margin-bottom: 0.5rem;
-            /* 画像コンテナとして機能させる */
-            width: 60px;  /* 好みのサイズに変更可能 */
-            height: 60px;
+            filter: drop-shadow(0 0 5px var(--fire-red));
             animation: spin 10s linear infinite;
         }
-        
-        .planet-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.8)); /* 金色の光彩 */
-        }
-
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
         /* Latest Info Banner (Challenger Style) */
         .challenger-banner {
             display: block;
-            margin: 0 -2rem 3rem -2rem; /* Full width */
+            margin: 0 -2rem 1rem -2rem; /* Full width */
             background: repeating-linear-gradient(
                 45deg,
                 #300,
@@ -162,13 +206,21 @@
             filter: brightness(1.3);
             z-index: 10;
         }
+        .banner-note {
+            display: block;
+            margin-bottom: 2rem;
+            font-size: 1rem; /* Significantly increased from 0.8rem */
+            font-weight: 700;
+            color: #eee;
+        }
+
         @keyframes alertBlink {
             0%, 90%, 100% { box-shadow: 0 0 10px var(--fire-red); border-color: var(--fire-red); }
             95% { box-shadow: 0 0 30px var(--fire-red), inset 0 0 30px var(--fire-red); border-color: var(--victory-gold); background-color: #800; }
         }
         .banner-title {
             font-family: 'Audiowide', cursive;
-            font-size: 1.4rem; /* Adjusted size slightly */
+            font-size: 1.4rem; /* Adjusted size */
             text-transform: uppercase;
             display: block;
             margin-bottom: 0.5rem;
@@ -177,7 +229,7 @@
             text-shadow: 2px 2px 0px #000;
         }
         .banner-sub {
-            font-size: 1rem;
+            font-size: 1rem; /* Increased size */
             font-weight: 700;
             font-family: 'Zen Kaku Gothic New', sans-serif;
             background: #000;
@@ -204,27 +256,27 @@
             overflow: hidden;
             cursor: pointer;
             transition: 0.3s;
-            aspect-ratio: 1;
+            aspect-ratio: 1; /* 正方形固定 */
             background: #111;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            animation: fadeIn 0.5s ease forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .work-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.03) !important; /* Ensure hover works even with scroll reveal transform override if active */
             box-shadow: 0 0 20px var(--fighter-orange);
             border-color: var(--victory-gold);
             z-index: 2;
+        }
+        
+        /* Fix for scroll reveal conflict with hover */
+        .work-item.reveal-active:hover {
+             transform: scale(1.03) !important;
         }
 
         .work-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* はみ出し部分をトリミング */
             display: block;
             transition: transform 0.5s;
         }
@@ -240,7 +292,7 @@
             right: 0;
             background: rgba(0,0,0,0.9); /* Almost black */
             padding: 12px 10px;
-            font-size: 1.1rem; /* Large Font */
+            font-size: 1.2rem; /* Large Font */
             font-weight: 700; /* Bold */
             font-family: 'Zen Kaku Gothic New', sans-serif;
             color: var(--victory-gold); /* Gold text */
@@ -256,7 +308,7 @@
             background: var(--chrome);
             color: #000;
             text-decoration: none;
-            padding: 10px 30px;
+            padding: 12px 35px;
             border-radius: 30px;
             font-weight: bold;
             font-family: 'Audiowide';
@@ -264,7 +316,7 @@
             border: 2px solid #fff;
             box-shadow: 0 0 10px var(--victory-gold);
             transition: 0.2s;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Increased size */
         }
         .y2k-btn:hover {
             filter: brightness(1.2);
@@ -277,20 +329,20 @@
             background: rgba(0, 0, 0, 0.6);
             border: 1px dashed var(--fighter-orange);
             border-radius: 8px;
-            padding: 2rem;
-            margin: 4rem 0;
+            padding: 2rem 1rem;
+            margin: 6rem 0; /* Increased margin for better separation */
             text-align: left;
             position: relative;
         }
         .text-section::before {
             content: "INFO";
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 20px;
             background: #000;
             padding: 0 10px;
             font-family: 'Audiowide';
-            font-size: 0.8rem;
+            font-size: 1rem; /* Increased size */
             color: var(--victory-gold);
             border: 1px solid var(--fighter-orange);
             border-radius: 4px;
@@ -299,13 +351,48 @@
         .text-section.access-mode::before {
             content: "STAGE";
         }
+        /* システム情報用のラベル上書き */
+        .text-section.system-mode::before {
+            content: "SYSTEM";
+        }
+        /* おすすめ情報用のラベル上書き */
+        .text-section.recommend-mode::before {
+            content: "TARGET";
+        }
+        /* 参加フロー用のラベル上書き */
+        .text-section.join-mode::before {
+            content: "FLOW";
+        }
+        /* ルール用のラベル上書き */
+        .text-section.rules-mode::before {
+            content: "RULE";
+        }
+        /* タイムテーブル用のラベル上書き */
+        .text-section.timetable-mode::before {
+            content: "TIME TABLE";
+        }
+        
+        /* 関連コミュニティ用のラベル上書き */
+        .text-section.related-mode::before {
+            content: "ALLIANCE";
+        }
+        
+        /* 運営会社用のラベル上書き */
+        .text-section.company-mode::before {
+            content: "COMPANY";
+        }
+        
+        /* 主催者用のラベル上書き */
+        .text-section.organizer-mode::before {
+            content: "ORGANIZER";
+        }
         
         .text-section h3 {
             font-family: 'Audiowide';
             color: var(--victory-gold);
             margin-top: 0;
             margin-bottom: 1.5rem;
-            font-size: 1.4rem;
+            font-size: 1.6rem; /* Increased size */
             letter-spacing: 1px;
             border-bottom: 2px solid var(--fire-red);
             padding-bottom: 0.5rem;
@@ -316,12 +403,326 @@
             line-height: 1.9;
             color: #eee;
             margin-bottom: 1rem;
-            font-size: 0.95rem;
+            font-size: 1rem; /* Increased size */
         }
         /* Highlight specific keywords in text */
         .highlight {
             color: var(--victory-gold);
             font-weight: bold;
+        }
+        
+        /* TIMELINE STYLES (UPDATED for alignment) */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-top: 10px;
+        }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 4px 1fr; /* Increased width for "PRACTICE" */
+            gap: 20px;
+            /* Ensures no extra space breaks the flow */
+        }
+        .timeline-time {
+            text-align: right;
+            padding-top: 2px; /* Slight adjustment to align with title text */
+            font-family: 'Audiowide';
+            color: var(--victory-gold);
+            font-size: 1.1rem;
+        }
+        .timeline-line-area {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .timeline-line {
+            width: 2px;
+            height: 100%;
+            background: var(--fire-red);
+            position: relative;
+        }
+        .timeline-dot {
+            position: absolute;
+            top: 8px; /* Approx center of first line of text */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--victory-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 5px var(--fire-red);
+            z-index: 2;
+        }
+        .timeline-content {
+            padding-bottom: 2rem; /* Spacing between events */
+        }
+        .timeline-title {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0 0 5px;
+        }
+        .timeline-desc {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        /* Last item line fade out optionally or keep solid */
+        .timeline-item:last-child .timeline-line {
+            background: linear-gradient(to bottom, var(--fire-red) 20%, transparent 100%);
+        }
+
+        /* System Table Styles */
+        .system-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            color: #fff;
+            font-size: 1.1rem; /* Explicit increase */
+        }
+        .system-table th, .system-table td {
+            border-bottom: 1px solid #555;
+            padding: 14px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .system-table th {
+            color: var(--victory-gold);
+            font-family: 'Audiowide';
+            width: 35%;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        .system-note {
+            font-size: 0.95rem; /* Increased size */
+            color: #ccc;
+            margin-top: 1.5rem;
+            border-top: 1px dashed #555;
+            padding-top: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* FAQ Styles */
+        .faq-container {
+            margin-top: 2rem;
+            border-top: 1px dashed #555;
+            padding-top: 1.5rem;
+            text-align: left;
+        }
+        .faq-title {
+            color: var(--victory-gold);
+            font-family: 'Audiowide';
+            margin-bottom: 1rem;
+            font-size: 1.3rem; /* Increased size */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        .faq-q {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem; /* Increased size */
+        }
+        .faq-q::before {
+            content: "Q.";
+            color: var(--fire-red);
+            margin-right: 8px;
+            font-family: 'Audiowide';
+        }
+        .faq-a {
+            color: #ccc;
+            padding-left: 1rem;
+            border-left: 2px solid var(--fire-red);
+            font-size: 1rem; /* Increased size */
+            line-height: 1.6;
+        }
+
+        /* Recommend List Styles */
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        .recommend-list li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem; /* Increased size */
+            color: #fff;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+        .recommend-list li:last-child {
+            border-bottom: none;
+        }
+        .recommend-list li i {
+            color: var(--victory-gold);
+            margin-top: 4px;
+            font-size: 1.2rem;
+            filter: drop-shadow(0 0 3px var(--fighter-orange));
+        }
+        .recommend-message {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #555;
+            font-weight: 500;
+            color: #ddd;
+            font-size: 1rem; /* Increased size */
+        }
+
+        /* =========================================
+           SPLIT SECTION WRAPPER (JOIN & RULES)
+           ========================================= */
+        .split-section-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 6rem 0; /* Increased margin */
+        }
+        @media (min-width: 900px) { /* PC - Side by Side */
+            .split-section-wrapper {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+        }
+        /* Reset margin for sections inside the wrapper */
+        .split-section-wrapper .text-section {
+            margin: 0; 
+            height: 100%;
+        }
+
+        /* Join Steps */
+        .join-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        .join-step:last-child {
+            margin-bottom: 0;
+        }
+        .join-icon-box {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border: 2px solid var(--victory-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--victory-gold);
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+        .join-text h4 {
+            margin: 0 0 5px 0;
+            color: #fff;
+            font-family: 'Audiowide';
+            font-size: 1.1rem;
+        }
+        .join-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        /* Rules List */
+        .rule-item {
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 1rem;
+        }
+        .rule-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .rule-head {
+            display: block;
+            color: var(--fire-red);
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+        .rule-head i {
+            margin-right: 8px;
+        }
+        .rule-body {
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+        
+        /* ORGANIZER STYLES */
+        .organizer-profile {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .organizer-img-box {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--victory-gold);
+            box-shadow: 0 0 15px var(--fire-red);
+            margin: 0 auto;
+        }
+        .organizer-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .organizer-info h4 {
+            font-size: 1.4rem;
+            color: var(--victory-gold);
+            margin: 0 0 5px;
+            text-align: center;
+        }
+        .organizer-info .en-name {
+            font-size: 1rem;
+            font-family: 'Audiowide';
+            color: #ccc;
+        }
+        .org-role {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .org-sub-head {
+            color: var(--fire-red);
+            font-weight: bold;
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--victory-gold);
+            padding-left: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .organizer-profile {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .organizer-img-box {
+                flex: 0 0 150px;
+                margin: 0;
+            }
+            .organizer-info {
+                flex: 1;
+            }
+            .organizer-info h4, .org-role {
+                text-align: left;
+            }
         }
 
         /* アクセスマップ用のスタイル */
@@ -352,6 +753,236 @@
             .access-map {
                 flex: 1;
             }
+        }
+        
+        /* =========================================
+           RELATED SITES (ALLIANCE) STYLES
+           ========================================= */
+        .related-grid {
+            display: flex;
+            justify-content: center; /* Center items mainly for single item or few items */
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .related-card {
+            display: block;
+            width: 280px;
+            background: #111;
+            border: 2px solid #555;
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: 0.3s;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        
+        /* Interactive State (for active links) */
+        .related-card.active:hover {
+            transform: translateY(-5px);
+            border-color: var(--victory-gold);
+            box-shadow: 0 0 20px var(--fighter-orange);
+        }
+        
+        /* Coming Soon State */
+        .related-card.coming-soon {
+            cursor: not-allowed;
+            border-color: #444;
+            opacity: 0.9;
+        }
+        
+        .related-img-box {
+            width: 100%;
+            height: 160px;
+            position: relative;
+        }
+        
+        .related-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Desaturate the image slightly if coming soon */
+            filter: brightness(0.8) contrast(1.1);
+        }
+        .related-card.coming-soon .related-img {
+            filter: grayscale(80%) brightness(0.6);
+        }
+
+        .related-info {
+            padding: 12px;
+            border-top: 1px solid #333;
+            background: linear-gradient(180deg, #222, #111);
+            text-align: center;
+        }
+        
+        .related-name {
+            color: var(--victory-gold);
+            font-family: 'Audiowide', sans-serif;
+            font-size: 1.1rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        /* Overlay Mask for Coming Soon */
+        .cs-mask {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .cs-stamp {
+            color: #aaa;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 1.5rem;
+            border: 3px solid #aaa;
+            padding: 8px 20px;
+            transform: rotate(-10deg);
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px #000;
+            background: rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+        }
+        
+        /* =========================================
+           OPERATING COMPANY STYLES
+           ========================================= */
+        .company-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .company-logo-box {
+            width: 100%;
+            max-width: 300px;
+            background: rgba(255,255,255,0.9);
+            border: 2px solid var(--victory-gold);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(255,204,0,0.3);
+            /* Aspect Ratio: 4:3 (Landscape-ish) to 1:1 */
+            aspect-ratio: 4 / 3;
+        }
+
+        .company-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .company-info {
+            width: 100%;
+            text-align: left;
+        }
+        
+        /* NEW: Dedicated table styles for Company to ensure readability */
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            font-size: 1.1rem; /* Large enough */
+        }
+        .company-table th, .company-table td {
+            padding: 10px 5px;
+            border-bottom: 1px solid #444;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .company-table th {
+            color: var(--victory-gold);
+            width: 25%;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+        .company-table td {
+            color: #fff;
+            font-weight: 700; /* Bold for readability */
+        }
+        
+        .company-desc {
+            margin-top: 1rem;
+            color: #eee; /* Brighter than #ccc */
+            line-height: 1.8;
+            font-size: 1rem; /* Increased */
+            border-top: 1px dashed #555;
+            padding-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .company-content-wrapper {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .company-logo-box {
+                flex: 0 0 250px;
+            }
+            .company-info {
+                flex: 1;
+            }
+        }
+        
+        /* Mobile Optimization for Company Table */
+        @media (max-width: 600px) {
+            .company-table th {
+                display: block;
+                width: 100%;
+                border-bottom: none;
+                padding-bottom: 0;
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+            .company-table td {
+                display: block;
+                padding-top: 2px;
+                padding-left: 0;
+            }
+        }
+
+        /* Floating Action Button */
+        .fab-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--victory-gold);
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 15px var(--fire-red);
+            border: 2px solid #fff;
+            z-index: 1000;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, background 0.3s;
+            animation: pulse 2s infinite;
+            font-size: 1rem;
+        }
+        .fab-btn:hover {
+            transform: scale(1.05);
+            background: #fff;
+        }
+        .fab-btn i {
+            font-size: 1.4rem;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(230, 0, 18, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(230, 0, 18, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 0, 18, 0); }
         }
 
         .modal {
@@ -412,7 +1043,7 @@
 
         @media (max-width: 600px) {
             .container { padding: 1.5rem 1rem; }
-            h1 { font-size: 4rem; }
+            h1 { font-size: 2.2rem; }
             .modal-win { padding: 15px; width: 95%; }
             .gallery-grid {
                 /* スマホでは1個ずつ縦積みにする */
@@ -420,70 +1051,263 @@
             }
             /* Banner Font Adjustment for Mobile */
             .banner-title { font-size: 1.1rem; }
-            .banner-sub { font-size: 0.8rem; }
+            .banner-sub { font-size: 1rem; }
+            
+            .fab-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* =========================================
+           MOBILE OPTIMIZATION (ADDED)
+           ========================================= */
+        @media (max-width: 768px) {
+            /* 1. Container Spacing */
+            .container {
+                padding: 2rem 15px; /* Reduce side padding */
+                width: auto;
+                margin: 0 10px;
+            }
+            
+            /* 2. Headings */
+            h1 {
+                font-size: 2rem;
+            }
+            .text-section h3, h2 {
+                font-size: 1.2rem !important;
+                word-break: keep-all;
+                overflow-wrap: normal;
+                line-height: 1.4;
+            }
+            
+            /* 3. Section Spacing */
+            .text-section {
+                margin: 4rem 0; /* Maintain spacing */
+            }
+            
+            /* Split Section Wrapper (Join & Rules) */
+            .split-section-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 60px; /* Ensure spacing between JOIN and RULES */
+            }
+            
+            /* 4. Timetable Layout: 2 Columns [Line | Content] where Content has Time stacked on Text */
+            .timeline-item {
+                grid-template-columns: 30px 1fr;
+                gap: 15px;
+            }
+            .timeline-time {
+                /* Move to right column, top row */
+                grid-column: 2;
+                grid-row: 1;
+                text-align: left;
+                padding-top: 0;
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+            .timeline-line-area {
+                /* Move to left column, span full height */
+                grid-column: 1;
+                grid-row: 1 / 3;
+            }
+            .timeline-content {
+                /* Move to right column, bottom row */
+                grid-column: 2;
+                grid-row: 2;
+                padding-bottom: 30px; /* Spacing between items */
+            }
+            .timeline-dot {
+                top: 6px; /* Align with the Time text */
+            }
+            
+            /* 5. System Table Optimization */
+            .system-table th, .system-table td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .system-table th {
+                border-bottom: none;
+                padding-bottom: 5px;
+                color: var(--victory-gold);
+                font-size: 1rem;
+            }
+            .system-table td {
+                padding-top: 0;
+                padding-left: 15px; /* Indent slightly */
+                border-bottom: 1px solid #444;
+                margin-bottom: 15px;
+            }
+            .system-table tr:last-child td {
+                border-bottom: none;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div id="header-icon" class="planet-icon"></div>
-            
+            <img src="./image/takana.png" class="takana-icon" alt="Team Logo">
             <h1 id="user-name"></h1>
             <div id="user-role" class="role-badge"></div>
-            <p id="user-bio" style="margin: 1.5rem 0; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px #000;"></p>
+            <p id="user-bio" style="margin: 1.5rem 0; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px #000; font-size: 1.1rem;"></p>
         </header>
         
-        <a href="https://x.com/home" class="challenger-banner" target="_blank" rel="noopener noreferrer">
-            <span class="banner-title">【緊急指令】新たな挑戦者を求む！</span>
-            <span class="banner-sub">毎週金曜、乱闘開始。エントリーはこちら ▷</span>
+        <!-- Updated: Link to X (Twitter) -->
+        <a href="https://twitter.com/smash_64_club" target="_blank" class="challenger-banner scroll-reveal zoom-in">
+            <span class="banner-title">最新の開催情報は公式Xをチェック ▷</span>
+            <span class="banner-sub">@smash_64_club</span>
         </a>
+        <span class="banner-note">※ 初心者・お一人様もスタッフがアテンドするのでご安心ください！</span>
         
-        <h2 style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red);">// バトルモード選択</h2>
+        <!-- PLAYER SPIRIT (Moved before BATTLE MODE) -->
+        <div id="free-text-area" style="position: relative;"></div>
         
-        <div id="gallery-grid" class="gallery-grid"></div>
+        <!-- TARGET PLAYER (Inserted by JS here) -->
 
-        <div id="free-text-area"></div>
+        <!-- BATTLE MODE Container -->
+        <div id="battle-area">
+            <!-- Changed h2 style for retro theme with scroll reveal -->
+            <h2 class="scroll-reveal from-left" style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red); font-size: 1.8rem;">// バトルモード</h2>
+            <div id="gallery-grid" class="gallery-grid"></div>
+        </div>
         
-        <div style="margin-top: 4rem;">
+        <!-- TIME TABLE (Inserted by JS here) -->
+        <!-- JOIN & RULES (Inserted by JS here) -->
+        <!-- SYSTEM & MENU (Inserted by JS here) -->
+        <!-- STAGE INFO (Inserted by JS here) -->
+        <!-- RELATED SITES (Inserted by JS here) -->
+        <!-- ORGANIZER (Inserted by JS here) -->
+        <!-- OPERATING COMPANY (Inserted by JS here) -->
+
+        <div style="margin-top: 4rem; position: relative;">
             <div id="links-list"></div>
-            <p style="margin-top: 2rem; font-size: 0.7rem; font-family: 'Audiowide'; opacity: 0.8;">
+            <p style="margin-top: 2rem; font-size: 0.85rem; font-family: 'Audiowide'; opacity: 0.8;">
                 COPYRIGHT © <span id="year"></span> <span id="footer-name"></span>.
             </p>
         </div>
     </div>
 
+    <!-- Floating Action Button -->
+    <a href="https://line.me/R/ti/p/@848arapc?ts=06071015&oat_content=url" target="_blank" class="fab-btn">
+        <i class="fa-brands fa-line"></i> LINEでエントリー / お問い合わせ
+    </a>
+
     <div id="modal" class="modal" onclick="closeModal()">
         <div class="modal-win" id="modal-win" onclick="event.stopPropagation()">
-            <h2 id="modal-title" style="font-family:'Audiowide'; margin-top:0; color:var(--victory-gold); font-size: 1.2rem; margin-bottom: 1rem; text-shadow: 1px 1px 0 #000;"></h2>
+            <h2 id="modal-title" style="font-family:'Audiowide'; margin-top:0; color:var(--victory-gold); font-size: 1.4rem; margin-bottom: 1rem; text-shadow: 1px 1px 0 #000;"></h2>
             <img id="modal-img" class="modal-img" src="" alt="Work Detail">
-            <p id="modal-cat" style="font-family:'Audiowide'; color:#ccc; font-size: 0.9rem; margin-top: 1rem;"></p>
-            <button onclick="closeModal()" class="y2k-btn" style="cursor:pointer; width:auto; margin:1rem auto 0; font-size: 0.8rem; padding: 8px 24px;">CLOSE</button>
+            <p id="modal-cat" style="font-family:'Audiowide'; color:#ccc; font-size: 1rem; margin-top: 1rem;"></p>
+            <button onclick="closeModal()" class="y2k-btn" style="cursor:pointer; width:auto; margin:1rem auto 0; font-size: 1rem; padding: 10px 30px;">CLOSE</button>
         </div>
     </div>
 
     <script>
         const config = {
-            // ▼ ここでヘッダーのアイコン画像を指定します ▼
-            iconImage: "./image/takana.png", 
-
             name: "スマブラ部",
-            role: "N64スタイル・ガチ対戦",
-            bio: "集え、かつての子供たちよ。<br><strong style='color:var(--victory-gold)'>1999年の熱狂</strong>が、今ふたたび幕を開ける。",
+            role: "N64スタイル・交流重視",
+            bio: "集え、かつての子供たちよ。<br><strong style='color:var(--victory-gold)'>1999年の熱狂</strong>が、今ふたたび幕を開ける。<br><span style='font-size:1rem; color:#ccc; font-weight:normal; display:block; margin-top:0.5rem;'>※お一人様・初心者・復帰勢、大歓迎！</span>",
             
             freeArea: {
-                title: "// プレイヤー・スピリット",
+                title: "// プレイヤースピリット",
                 content: `
-                    <h4 style="margin:0 0 10px 0; color:var(--victory-gold); font-size:1.1rem;">なぜ、今「64」なのか？</h4>
-                    最新作がどれほど進化しようとも、我々の魂は「64」にある。<br>
-                    あの独特のヒットストップ、3Dスティックの感触、そしてシンプルな読み合いの奥深さ。この<span class="highlight">「原点」</span>こそが至高であると信じる者のためのアジト、それがスマブラ部だ。<br><br>
-                    ブランク？ 関係ない。コントローラーを握れば、あの頃の感覚が蘇るはずだ。準備はいいか？ 画面の向こうで、<span class="highlight">まだ見ぬ強敵</span>が待っている。
+                    <h4 style="margin:0 0 15px 0; color:var(--victory-gold); font-size:1.2rem; border-left:3px solid var(--victory-gold); padding-left:10px;">強さは関係ない、楽しんだもん勝ち。</h4>
+                    <p>「スマブラ部」は、ガチ勢だけが集まる場所ではありません。むしろ、<span class="highlight">「20年ぶりにコントローラーを握る」</span>という復帰勢が大半です。</p>
+                    <p>操作方法を忘れていても大丈夫。スタッフや周りのメンバーが優しく教えます。ここにあるのは、勝ち負けよりも「あの頃の放課後の空気感」。</p>
+                    <p>お酒を片手に観戦するもよし、ひたすら乱闘に興じるもよし。<br>
+                    ここは、大人が童心に帰れる<span class="highlight">「最高の部室」</span>です。</p>
                 `
             },
 
-            // アクセス情報 (提供された画像データを元に作成)
+            // おすすめ情報（ターゲット）
+            recommend: {
+                title: "// ターゲットプレイヤー",
+                list: [
+                    { icon: "fa-solid fa-gamepad", text: "昔、放課後に友達の家で64をやり込んだ" },
+                    { icon: "fa-solid fa-beer-mug-empty", text: "ゲームも好きだが、お酒や会話も楽しみたい" },
+                    { icon: "fa-solid fa-user-group", text: "職場以外で、利害関係のない友達が欲しい" },
+                    { icon: "fa-solid fa-heart", text: "「ガチ対戦」よりは「ワチャワチャ」楽しみたい" }
+                ],
+                message: `ここは単なるゲーム対戦会場ではありません。<br>共通の思い出を持つ大人たちが集まる<span class="highlight">「サードプレイス（第3の居場所）」</span>です。`
+            },
+            
+            // 参加フロー
+            join: {
+                title: "// 参加の流れ",
+                steps: [
+                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Xで「開催日」をチェック。<br>※現在は不定期（金曜夜メイン）で開催中です。" },
+                    { title: "ENTRY", icon: "fa-solid fa-door-open", desc: "「予約なし」の飛び込み参加も大歓迎！<br>確実に席を確保したい場合はLINEからご連絡ください。" },
+                    { title: "PAY & PLAY", icon: "fa-solid fa-beer-mug-empty", desc: "受付で参加費（¥1,000）を支払い、入場したらそこはもう部室です。思う存分楽しみましょう。" }
+                ]
+            },
+            
+            // タイムテーブル (UPDATED)
+            timetable: {
+                title: "// タイムテーブル",
+                events: [
+                    { time: "OPEN", title: "受付開始", desc: "ドリンク片手にウォーミングアップ" },
+                    { time: "PRACTICE", title: "4人乱闘・練習タイム", desc: "初心者向けエンジョイ台・経験者向けガチ台に分かれてプレイ。<br>ワイワイ楽しむ時間です。" },
+                    { time: "BATTLE", title: "1on1 真剣勝負", desc: "希望者によるタイマンバトル。<br>練習の成果を試すチャンス！" },
+                    { time: "CEREMONY", title: "MVP表彰&談笑タイム", desc: "本日のMVP（Top3）には景品を贈呈！その後はノーサイドで語り合う交流の時間です。" }
+                ]
+            },
+
+            // マナー（ルール） (UPDATED)
+            rules: {
+                title: "// 部室のルール",
+                items: [
+                    { head: "基本ルール", body: "アイテムなし / 3ストック。<br>ガチ勢もエンジョイ勢も楽しめる標準ルールです。" },
+                    { head: "プレイ環境", body: "「初心者向けエンジョイ台」と「経験者向けガチ台」の2台をご用意しています。<br>その日の気分や実力に合わせて、好きな台で遊んでください。" },
+                    { head: "禁止事項", body: "ナンパ・勧誘行為は禁止です。<br>純粋にゲームとお酒を楽しむ場所です。" }
+                ]
+            },
+
+            // システム
+            system: {
+                title: "// システム・メニュー",
+                content: `
+                    <table class="system-table">
+                        <tr>
+                            <th>ENTRY</th>
+                            <td>
+                                一般：¥1,000<br>
+                                キッズ (小学生以下)：¥500
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>DRINK PLAN<br><span style="font-size:0.8rem; font-weight:normal;">(Self Style)</span></th>
+                            <td>
+                                セルフ飲み放題 (アルコール)：¥1,500 <span style="font-size:0.9rem; color:#bbb;">※ビールなし</span><br>
+                                セルフ飲み放題 (ソフトD)：¥700<br>
+                                <span style="font-size:0.9rem; color:#bbb;">※単品各種あり</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>FOOD MENU</th>
+                            <td>
+                                吉田の肉うどん：¥650〜<br>
+                                二郎系肉うどん：¥850〜<br>
+                                あげぽよチキン：¥380<br>
+                                あげぽよポテト：¥280<br>
+                                日替わり惣菜：¥280均一<br>
+                                日替わり一品料理：¥380均一
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="system-note">
+                        <i class="fa-solid fa-check" style="color:var(--victory-gold);"></i> 手ぶら参加OK（コントローラー貸出あり）<br>
+                        <i class="fa-solid fa-check" style="color:var(--victory-gold);"></i> 見学のみ、お酒メインの交流参加も大歓迎です！
+                    </div>
+                `
+            },
+
+            // アクセス情報
             access: {
-                title: "// ステージ情報（アクセス）",
+                title: "// 会場アクセス",
                 content: `
                     <strong>会場：リッチダイヤモンド内</strong><br>
                     〒400-0867 山梨県甲府市青沼3丁目5-44<br>
@@ -502,83 +1326,335 @@
                     ・甲府南ICから約20分<br>
                     ・甲府昭和ICから約15分
                 `,
-                // Google Maps Embed (甲府市青沼3丁目5-44)
                 map: `<iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%94%B2%E5%BA%9C%E5%B8%82%E9%9D%92%E6%B2%BC3%E4%B8%81%E7%9B%AE5-44&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
+            },
+            
+            // 関連コミュニティ
+            related: {
+                title: "// 関連コミュニティ",
+                list: [
+                    { 
+                        name: "将棋部", 
+                        img: "./image/shogi.jpg", 
+                        url: "#", 
+                        status: "coming_soon" 
+                    }
+                ]
+            },
+            
+            // 主催者 (UPDATED)
+            organizer: {
+                title: "// 主催者プロフィール",
+                name: "桑原 淳",
+                enName: "Jun Kuwabara",
+                role: "株式会社高菜先生ソーシャルエンタープライズ 代表取締役<br>超超エリート株式会社 代表",
+                history: "富士吉田市出身。東京青山で美容師として勤務後、25歳で「旅人美容師」としてハサミ一本で世界一周1000人ヘアカットの旅へ。<br>帰国後、書籍『世界を知るために旅に出たら 日本を知る旅だった』を出版。<br>東京・高円寺に美容室「UpToYou」を設立後、現在は観光・飲食・社会貢献事業を展開する「株式会社高菜先生ソーシャルエンタープライズ」等の代表を務める。",
+                message: "中学・高校時代をスマブラに捧げた男。<br>専門学校時代には、当時の東京大会チャンピオンに圧勝した経験を持つ隠れた実力者。<br>「かつての熱狂を、もう一度作りたい」という想いで当部を発足。",
+                img: "./image/junkuwabara.jpg" 
+            },
+            
+            // 運営会社情報
+            company: {
+                title: "// 運営会社",
+                logo: "./image/takanasocial.png", 
+                name: "株式会社高菜先生ソーシャルエンタープライズ",
+                rep: "桑原 淳",
+                address: "東京都中央区銀座1-22-11 銀座大竹ビジデンス2階",
+                desc: "「エンタメ×支援」をテーマに、保護猫『高菜先生』を通じて社会課題に取り組むソーシャルエンタープライズ。<br>子ども食堂や職業体験、地域コミュニティの運営など、楽しみながら社会を良くする活動を行っています。"
             },
 
             works: [
-                { file: "image1.jpg", title: "ウィークリー・マッチ", category: "毎週金曜、定期対戦会開催。ガチ1on1メイン。" },
-                { file: "image2.jpg", title: "部内トーナメント（半年毎）",  category: "半年間の総決算。部の頂点「最強」の称号をかけた真剣勝負。" },
-                { file: "image3.jpg", title: "テクニック・トレーニング", category: "0%即死コンボ、Zキャンセル、ベクトル反転。64特有の深淵なる技術を伝授。" },
-                { file: "image4.jpg", title: "アフター・バトル（交流会）", category: "戦いの後はノーサイド。飲み会を通じて結束を深める。" },
+                { file: "/image1.jpg", title: "4人乱闘（エンジョイ）", category: "まずはここから。勝敗よりも笑い重視の4人対戦。復帰勢も初心者も、とりあえずコントローラーを握れば盛り上がれます。" },
+                { file: "/image3.jpg", title: "1on1（真剣勝負）",  category: "アイテムなし、3ストック。運要素を排除したヒリつく対戦。かつてのライバルたちと、実力をぶつけ合う熱い時間。" },
+                { file: "/chiken.png", title: "部室メシ & 乾杯", category: "名物「吉田の肉うどん」や「あげぽよチキン」で腹ごしらえ。セルフ飲み放題を片手に語り合えば、そこはもう「第3の居場所」です。" },
+                { file: "/image4.jpg", title: "MVP発表 & 談笑タイム", category: "その日のNo.1プレイヤー「MVP」を選出。最後は勝ち負け関係なく、今日のナイスプレーを肴に盛り上がる時間です。" },
             ],
 
             links: [
-                { label: "X / Twitter", url: "https://twitter.com" }
+                { label: "LINEで問い合わせる", url: "https://line.me/R/ti/p/@848arapc?ts=06071015&oat_content=url" }
             ]
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-            // ▼ アイコン画像の差し替え処理 ▼
-            const iconContainer = document.getElementById('header-icon');
-            if (config.iconImage) {
-                const img = document.createElement('img');
-                img.src = config.iconImage;
-                img.alt = "Header Icon";
-                iconContainer.appendChild(img);
-            } else {
-                iconContainer.textContent = "🪐"; // 画像設定がない場合のフォールバック
-            }
-
             document.getElementById('user-name').textContent = config.name;
             document.getElementById('footer-name').textContent = config.name;
             document.getElementById('user-role').textContent = config.role;
             document.getElementById('user-bio').innerHTML = config.bio;
             document.getElementById('year').textContent = new Date().getFullYear();
 
+            // 1. PLAYER SPIRIT (free-text-area)
             const freeAreaEl = document.getElementById('free-text-area');
             if (config.freeArea && config.freeArea.title && config.freeArea.content) {
                 const section = document.createElement('div');
                 section.className = 'text-section';
                 section.innerHTML = `
-                    <h3>${config.freeArea.title}</h3>
-                    <p>${config.freeArea.content}</p>
+                    <h3 class="scroll-reveal from-left">${config.freeArea.title}</h3>
+                    <div class="scroll-reveal from-bottom">
+                       <p>${config.freeArea.content}</p>
+                    </div>
                 `;
                 freeAreaEl.appendChild(section);
             }
 
-            // アクセス情報の追加
-            if (config.access && config.access.title && config.access.content) {
+            // 2. TARGET PLAYER (Insert AFTER Spirit)
+            if (config.recommend && config.recommend.title && config.recommend.list) {
                 const section = document.createElement('div');
-                section.className = 'text-section access-mode'; // クラスを追加
+                section.className = 'text-section recommend-mode';
+                let listHtml = '<ul class="recommend-list">';
+                config.recommend.list.forEach((item, index) => {
+                    // Staggered delay for list items
+                    listHtml += `<li class="scroll-reveal from-bottom" style="transition-delay: ${index * 0.1}s"><i class="${item.icon}"></i> ${item.text}</li>`;
+                });
+                listHtml += '</ul>';
                 
-                // 地図がある場合は表示
-                const mapHtml = config.access.map ? `<div class="access-map">${config.access.map}</div>` : '';
-                
+                if (config.recommend.message) {
+                    listHtml += `<p class="recommend-message scroll-reveal from-bottom" style="transition-delay: 0.4s">${config.recommend.message}</p>`;
+                }
+
                 section.innerHTML = `
-                    <h3>${config.access.title}</h3>
-                    <div class="access-content-wrapper">
-                        <div class="access-text">${config.access.content}</div>
-                        ${mapHtml}
-                    </div>
+                    <h3 class="scroll-reveal from-left">${config.recommend.title}</h3>
+                    ${listHtml}
                 `;
-                // フリーテキストエリアの後に追加
                 freeAreaEl.after(section);
             }
 
+            // 3. BATTLE MODE is already statically placed after free-text-area
+            // We use this as an anchor for subsequent insertions
+            const battleArea = document.getElementById('battle-area');
+            let lastElement = battleArea;
+
+            // 4. TIME TABLE (Insert AFTER Battle Mode) [NEW]
+            if (config.timetable && config.timetable.events) {
+                const section = document.createElement('div');
+                section.className = 'text-section timetable-mode';
+                let timeHtml = '<div class="timeline-container">';
+                config.timetable.events.forEach((item, index) => {
+                    timeHtml += `
+                        <div class="timeline-item scroll-reveal from-bottom" style="transition-delay: ${index * 0.1}s">
+                            <div class="timeline-time">${item.time}</div>
+                            <div class="timeline-line-area"><div class="timeline-line"><div class="timeline-dot"></div></div></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">${item.title}</h4>
+                                <p class="timeline-desc">${item.desc}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                timeHtml += '</div>';
+                
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.timetable.title}</h3>
+                    ${timeHtml}
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+
+            // 5. JOIN & RULES (Insert AFTER Time Table)
+            // To keep them compact, we wrap them in a grid container.
+            if (config.join || config.rules) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'split-section-wrapper';
+                
+                // Join Section
+                if (config.join) {
+                    const joinSection = document.createElement('div');
+                    joinSection.className = 'text-section join-mode';
+                    
+                    let stepsHtml = '';
+                    config.join.steps.forEach((step, index) => {
+                        stepsHtml += `
+                            <div class="join-step scroll-reveal from-bottom" style="transition-delay: ${index * 0.15}s">
+                                <div class="join-icon-box"><i class="${step.icon}"></i></div>
+                                <div class="join-text">
+                                    <h4>${step.title}</h4>
+                                    <p>${step.desc}</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    joinSection.innerHTML = `
+                        <h3 class="scroll-reveal from-left">${config.join.title}</h3>
+                        <div class="join-content">${stepsHtml}</div>
+                    `;
+                    wrapper.appendChild(joinSection);
+                }
+
+                // Rules Section
+                if (config.rules) {
+                    const rulesSection = document.createElement('div');
+                    rulesSection.className = 'text-section rules-mode';
+                    
+                    let itemsHtml = '<div class="rules-list">';
+                    config.rules.items.forEach((item, index) => {
+                        itemsHtml += `
+                            <div class="rule-item scroll-reveal from-bottom" style="transition-delay: ${index * 0.15}s">
+                                <span class="rule-head"><i class="fa-solid fa-diamond"></i> ${item.head}</span>
+                                <span class="rule-body">${item.body}</span>
+                            </div>
+                        `;
+                    });
+                    itemsHtml += '</div>';
+
+                    rulesSection.innerHTML = `
+                        <h3 class="scroll-reveal from-left">${config.rules.title}</h3>
+                        ${itemsHtml}
+                    `;
+                    wrapper.appendChild(rulesSection);
+                }
+
+                lastElement.after(wrapper);
+                lastElement = wrapper;
+            }
+
+            // 6. SYSTEM & MENU (Insert AFTER Join/Rules)
+            if (config.system && config.system.title && config.system.content) {
+                const section = document.createElement('div');
+                section.className = 'text-section system-mode';
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.system.title}</h3>
+                    <div class="system-content scroll-reveal from-bottom">${config.system.content}</div>
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+
+            // 7. STAGE INFO (Insert AFTER System)
+            if (config.access && config.access.title && config.access.content) {
+                const section = document.createElement('div');
+                section.className = 'text-section access-mode'; 
+                
+                const mapHtml = config.access.map ? `<div class="access-map scroll-reveal zoom-in" style="transition-delay: 0.2s">${config.access.map}</div>` : '';
+                
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.access.title}</h3>
+                    <div class="access-content-wrapper">
+                        <div class="access-text scroll-reveal from-bottom">${config.access.content}</div>
+                        ${mapHtml}
+                    </div>
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+            /*
+            // 8. RELATED SITES (Insert AFTER Stage Info)
+            if (config.related && config.related.list && config.related.list.length > 0) {
+                const section = document.createElement('div');
+                section.className = 'text-section related-mode';
+                
+                let cardsHtml = '<div class="related-grid">';
+                config.related.list.forEach((item, index) => {
+                    const isComingSoon = item.status === 'coming_soon';
+                    const activeClass = isComingSoon ? 'coming-soon' : 'active';
+                    const linkUrl = isComingSoon ? 'javascript:void(0)' : item.url;
+                    
+                    let overlayHtml = '';
+                    if (isComingSoon) {
+                        overlayHtml = `<div class="cs-mask"><span class="cs-stamp">COMING SOON</span></div>`;
+                    }
+                    
+                    cardsHtml += `
+                        <a href="${linkUrl}" class="related-card ${activeClass} scroll-reveal zoom-in" style="transition-delay: ${index * 0.1}s">
+                            <div class="related-img-box">
+                                ${overlayHtml}
+                                <img src="${item.img}" class="related-img" alt="${item.name}">
+                            </div>
+                            <div class="related-info">
+                                <h4 class="related-name">${item.name}</h4>
+                            </div>
+                        </a>
+                    `;
+                });
+                cardsHtml += '</div>';
+                
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.related.title}</h3>
+                    ${cardsHtml}
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+            */
+            // 9. ORGANIZER (Insert AFTER Related Sites) [NEW]
+            if (config.organizer) {
+                const section = document.createElement('div');
+                section.className = 'text-section organizer-mode';
+                
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.organizer.title}</h3>
+                    <div class="organizer-profile scroll-reveal from-bottom">
+                        <div class="organizer-img-box">
+                            <img src="${config.organizer.img}" alt="${config.organizer.enName}" class="organizer-img">
+                        </div>
+                        <div class="organizer-info">
+                            <h4>${config.organizer.name} <span class="en-name">(${config.organizer.enName})</span></h4>
+                            <div class="org-role">${config.organizer.role}</div>
+                            
+                            <div class="org-sub-head">[経歴]</div>
+                            <p>${config.organizer.history}</p>
+                            
+                            <div class="org-sub-head">[スマブラ部への想い]</div>
+                            <p>${config.organizer.message}</p>
+                        </div>
+                    </div>
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+            /*
+            // 10. OPERATING COMPANY (Insert AFTER Organizer)
+            if (config.company) {
+                const section = document.createElement('div');
+                section.className = 'text-section company-mode';
+                
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.company.title}</h3>
+                    <div class="company-content-wrapper scroll-reveal from-bottom">
+                        <div class="company-logo-box">
+                           <img src="${config.company.logo}" alt="${config.company.name}" class="company-logo">
+                        </div>
+                        <div class="company-info">
+                           <table class="company-table">
+                               <tr><th>会社名</th><td>${config.company.name}</td></tr>
+                               <tr><th>代表</th><td>${config.company.rep}</td></tr>
+                               <tr><th>所在地</th><td>${config.company.address}</td></tr>
+                           </table>
+                           <div class="company-desc">${config.company.desc}</div>
+                        </div>
+                    </div>
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+            */
+
+            // Gallery Grid Logic
             const grid = document.getElementById('gallery-grid');
-            const maxItems = 18;
+            const maxItems = 4;
 
             for (let i = 1; i <= maxItems; i++) {
                 const workConfig = config.works[i - 1] || {};
-                const fileName = workConfig.file ? workConfig.file : `image${i}.jpg`;
-                const imgPath = `image/${fileName}`;
+                
+                let imgPath;
+                if (workConfig.file && workConfig.file.startsWith('http')) {
+                    imgPath = workConfig.file;
+                } else if (workConfig.file) {
+                    imgPath = `./image/${workConfig.file}`;
+                } else {
+                    imgPath = `./image/image${i}.jpg`;
+                }
+                
                 const title = workConfig.title ? workConfig.title : `Work ${i}`;
                 const category = workConfig.category ? workConfig.category : 'Gallery';
 
                 const div = document.createElement('div');
-                div.className = 'work-item';
-                div.style.display = 'none'; // 初期状態は非表示
+                // Added scroll-reveal class here
+                div.className = 'work-item scroll-reveal zoom-in'; 
+                // Add minor stagger effect for grid items to look cool
+                div.style.transitionDelay = `${(i % 2) * 0.1}s`;
+
+                div.style.display = 'none'; 
                 
                 div.innerHTML = `
                     <img src="${imgPath}" class="work-img" alt="${title}" 
@@ -596,13 +1672,36 @@
                 if(!link.label) return;
                 const a = document.createElement('a');
                 a.href = link.url;
-                a.className = 'y2k-btn';
+                a.className = 'y2k-btn scroll-reveal from-bottom';
                 a.textContent = link.label;
                 a.target = "_blank";
                 a.rel = "noopener noreferrer";
                 linkList.appendChild(a);
             });
+
+            // Init Scroll Observer
+            initScrollObserver();
         });
+
+        // SCROLL OBSERVER LOGIC
+        function initScrollObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, {
+                root: null,
+                // Changed from -15% to -30% to trigger animation later (when element is more visible)
+                rootMargin: '0px 0px -10% 0px', 
+                threshold: 0
+            });
+
+            const targets = document.querySelectorAll('.scroll-reveal');
+            targets.forEach(target => observer.observe(target));
+        }
 
         const modal = document.getElementById('modal');
         
