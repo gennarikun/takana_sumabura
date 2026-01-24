@@ -86,6 +86,25 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* --- 改行設定 --- */
+        .sp-br {
+            display: none;
+        }
+        .pc-br {
+            display: block;
+        }
+        @media (max-width: 767px) {
+            /* 先ほどのスマホ用改行の設定があればそのまま維持 */
+            .sp-br {
+                display: block;
+            }
+            
+            /* ▼ 今回追加：PC用改行をスマホで隠す設定 ▼ */
+            .pc-br {
+                display: none;
+            }
+        }
+
         /* =========================================
            SCROLL REVEAL ANIMATION
            ========================================= */
@@ -1158,9 +1177,9 @@
         </header>
         
         <!-- Updated: Link to X (Twitter) -->
-        <a href="https://twitter.com/smash_64_club" target="_blank" class="challenger-banner scroll-reveal zoom-in">
-            <span class="banner-title">最新の開催情報は公式Xをチェック ▷</span>
-            <span class="banner-sub">@smash_64_club</span>
+        <a href="https://x.com/takana_sumabura" target="_blank" class="challenger-banner scroll-reveal zoom-in">
+            <span class="banner-title">最新の開催情報は<br class="sp-br">公式Xをチェック ▷</span>
+            <span class="banner-sub">@takana_sumabura</span>
         </a>
         <span class="banner-note">※ 初心者・お一人様もスタッフがアテンドするのでご安心ください！</span>
         
