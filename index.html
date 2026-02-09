@@ -15,11 +15,11 @@
     <meta name="google-site-verification" content="6mb-C-l_J2Y35BO6RPZVJy03y-ZWl_FiImLUhGcvJuI" />
     <meta name="description" content="山梨県甲府市の『リッチダイヤモンド総合市民会館』等で開催！高菜先生がプロデュースするスマブラ部公式サイトです。ニンテンドー64実機での対戦会や交流を楽しめます。初心者やお子様連れも大歓迎です。">
     <meta name="keywords" content="スマブラ, 64, 山梨, 甲府, オフ会, 対戦会, 高菜先生, スマブラ部, リッチダイヤモンド総合市民会館">
-    <meta property="og:title" content="高菜先生のスマブラ部 - 64 STYLE（山梨・甲府）">
+    <meta property="og:title" content="高菜先生のスマブラ部 - ニンテンドー64（山梨・甲府）">
     <meta property="og:description" content="山梨で64スマブラを楽しもう！初心者・親子連れ大歓迎の交流イベント。">
     <meta property="og:image" content="https://gennarikun.github.io/takana_sumabura/image/takana.png">
     <meta property="og:type" content="website">
-    <title>高菜先生のスマブラ部 - 64 STYLE | 山梨・甲府の初心者歓迎64スマブラ交流会</title>
+    <title>高菜先生のスマブラ部 - ニンテンドー64 | 山梨・甲府の初心者歓迎64スマブラ交流会</title>
     
     <!-- Added font weight 700 for bold text -->
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
@@ -144,7 +144,7 @@
             /* Negative margin to stretch full width of container */
             margin: -2rem -2rem 0 -2rem;
             padding: 5rem 1rem;
-            /* Background Image (Unsplash Placeholder - Retro Arcade) */
+            /* Background Image (Unsplash: Retro Arcade) */
             background-image: url('./image/Gemini_Generated_Image_v3n2vkv3n2vkv3n2.png');
             background-size: cover;
             background-position: center;
@@ -199,7 +199,6 @@
             width: auto;
             display: inline-block;
             margin-bottom: 0.5rem;
-            filter: drop-shadow(0 0 5px var(--fire-red));
             animation: spin 10s linear infinite;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
@@ -396,6 +395,10 @@
         .text-section.timetable-mode::before {
             content: "TIME TABLE";
         }
+        /* スケジュール用のラベル上書き */
+        .text-section.schedule-mode::before {
+            content: "SCHEDULE";
+        }
         
         /* 関連コミュニティ用のラベル上書き */
         .text-section.related-mode::before {
@@ -410,6 +413,11 @@
         /* 主催者用のラベル上書き */
         .text-section.organizer-mode::before {
             content: "ORGANIZER";
+        }
+        
+        /* フォトギャラリー用のラベル上書き */
+        .text-section.photo-gallery-mode::before {
+            content: "GALLERY";
         }
         
         .text-section h3 {
@@ -498,6 +506,191 @@
             background: linear-gradient(to bottom, var(--fire-red) 20%, transparent 100%);
         }
 
+        /* =========================================
+           SCHEDULE (NEW SECTION)
+           ========================================= */
+        .schedule-regular-banner {
+            background: #000;
+            border: 2px solid var(--victory-gold);
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+        }
+        .schedule-main {
+            display: block;
+            font-family: 'Audiowide';
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 2px 2px 0 var(--fire-red);
+            line-height: 1.2;
+        }
+        .schedule-sub {
+            display: block;
+            font-family: 'Audiowide';
+            color: var(--victory-gold);
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Updated Grid for Mobile (2 Columns) */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Force 2 columns */
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .schedule-card {
+            background: #111;
+            border: 1px solid #444;
+            border-radius: 6px;
+            width: auto; /* Let Grid handle width */
+            max-width: none;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
+            overflow: hidden;
+            /* Flex for content centering */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* PC Adjustment */
+        @media (min-width: 600px) {
+            .schedule-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .schedule-card {
+                width: 140px;
+                max-width: 140px;
+            }
+        }
+        
+        .schedule-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--victory-gold);
+        }
+        /* Top accent bar */
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--fire-red);
+        }
+        .sc-month {
+            font-family: 'Audiowide';
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 5px;
+        }
+        .sc-date {
+            font-family: 'Audiowide';
+            font-size: 2rem;
+            color: #fff;
+            line-height: 1;
+            margin: 5px 0;
+            letter-spacing: -1px;
+        }
+        .sc-day {
+            font-family: 'Audiowide';
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            background: #222;
+            color: #fff;
+        }
+        .sc-day.sat { color: #8ecae6; } /* Saturday color */
+        .sc-day.fri { color: #ffb703; } /* Friday color */
+        .sc-day.sun { color: #e60012; }
+        .sc-day.mon { color: #fff; }
+        .sc-day.tue { color: #fff; }
+        .sc-day.wed { color: #fff; }
+        .sc-day.thu { color: #fff; }
+        
+        .schedule-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #bbb;
+            text-align: center;
+            border-top: 1px dashed #444;
+            padding-top: 1rem;
+        }
+
+        /* =========================================
+           HORIZONTAL PHOTO GALLERY
+           ========================================= */
+        .photo-gallery-wrapper {
+            margin-top: 1rem;
+            position: relative;
+        }
+        .horizontal-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            padding: 10px 5px 20px 5px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--victory-gold) #333;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: #222;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--victory-gold);
+            border-radius: 3px;
+        }
+
+        .photo-card {
+            flex: 0 0 280px; /* PC width */
+            aspect-ratio: 1/1; /* Force Square */
+            border-radius: 6px;
+            overflow: hidden;
+            scroll-snap-align: center;
+            border: 2px solid #444;
+            position: relative;
+            background: #000;
+            transition: 0.3s;
+        }
+        @media (max-width: 600px) {
+            .photo-card {
+                flex: 0 0 220px; /* Mobile width: Smaller to encourage scroll */
+                scroll-snap-align: center;
+            }
+        }
+        .photo-card:hover {
+            border-color: var(--victory-gold);
+            transform: scale(1.02);
+        }
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-scroll-hint {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--victory-gold);
+            font-family: 'Audiowide';
+            margin-bottom: 0.5rem;
+            animation: blink 2s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0.5; } }
+
         /* System Table Styles */
         .system-table {
             width: 100%;
@@ -518,6 +711,9 @@
             width: 35%;
             font-weight: normal;
             letter-spacing: 1px;
+        }
+        .system-table td {
+            color: #fff; /* Ensure text is visible */
         }
         .system-note {
             font-size: 0.95rem; /* Increased size */
@@ -973,6 +1169,9 @@
                 padding-top: 2px;
                 padding-left: 0;
             }
+            
+            .schedule-main { font-size: 1.6rem; }
+            .schedule-sub { font-size: 1rem; }
         }
 
         /* Floating Action Button */
@@ -1193,6 +1392,8 @@
         <div id="free-text-area" style="position: relative;"></div>
         
         <!-- TARGET PLAYER (Inserted by JS here) -->
+        
+        <!-- SCHEDULE (Inserted by JS here) -->
 
         <!-- BATTLE MODE Container -->
         <div id="battle-area">
@@ -1260,13 +1461,46 @@
                 message: `ここは単なるゲーム対戦会場ではありません。<br>共通の思い出を持つ大人たちが集まる<span class="highlight">「サードプレイス（第3の居場所）」</span>です。`
             },
             
+            // スケジュール設定
+            schedule: {
+                title: "// 次回の対戦日",
+                timeInfo: "18:00 - 21:00",
+                note: "※ 祝日や貸切等で変更になる場合は<a href='https://www.instagram.com/takana_sumabura?igsh=MWU1bXBvbXh1Y3UxOA==' target='_blank' style='color:var(--victory-gold); text-decoration:underline; font-weight:bold;'>Instagram</a>で告知します。",
+                // 【カスタマイズ】ここに開催予定日を 'YYYY/MM/DD' 形式で列挙してください。
+                // 過去の日付は自動的に非表示になります。
+                dates: [
+                    "2026/02/20",
+                    "2026/02/21",
+                    "2026/02/27",
+                    "2026/02/28",
+                ]
+            },
+            
+            // 活動写真ギャラリー（NEW）
+            // 画像URLをここに追加してください
+            photoGallery: {
+                title: "// 活動フォト",
+                images: [
+                    "event_24.jpg",
+                    "event_14.jpg",
+                    "event_5.jpg",
+                    "event_20.jpg",
+                    "event_7.jpg",
+                    "event_11.jpg",
+                    "event_8.jpg",
+                    "event_9.jpg",
+                    "event_6.jpg",
+                    "event_29.png"
+                ]
+            },
+            
             // 参加フロー
             join: {
                 title: "// 参加の流れ",
                 steps: [
-                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Xで「開催日」をチェック。<br>※現在は不定期（土曜夜メイン）で開催中です。" },
+                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Instagramで「開催日」をチェック。<br>※毎週金曜・土曜に定期開催中です。" },
                     { title: "ENTRY", icon: "fa-solid fa-door-open", desc: "「予約なし」の飛び込み参加も大歓迎！<br>確実に席を確保したい場合はLINEからご連絡ください。" },
-                    { title: "PAY & PLAY", icon: "fa-solid fa-beer-mug-empty", desc: "受付で参加費￥1,000（※2/7は無料）を支払い、入場したらそこはもう部室です。思う存分楽しみましょう。" }
+                    { title: "PAY & PLAY", icon: "fa-solid fa-beer-mug-empty", desc: "受付で参加費￥1,000を支払い、入場したらそこはもう部室です。思う存分楽しみましょう。" }
                 ]
             },
             
@@ -1300,7 +1534,7 @@
                         <tr>
                             <th>ENTRY</th>
                             <td>
-                                無料 ※2/7限定（通常¥1,000+1ドリンク付）
+                                ¥1,000(1ドリンク付)
                             </td>
                         </tr>
                         <tr>
@@ -1360,7 +1594,7 @@
                 list: [
                     { 
                         name: "将棋部", 
-                        img: "./image/shogi.jpg", 
+                        img: "https://images.unsplash.com/photo-1616790876844-97c0c6057364?q=80&w=800&auto=format&fit=crop", 
                         url: "#", 
                         status: "coming_soon" 
                     }
@@ -1389,14 +1623,14 @@
             },
 
             works: [
-                { file: "/image1.jpg", title: "4人乱闘（エンジョイ）", category: "まずはここから。勝敗よりも笑い重視の4人対戦。復帰勢も初心者も、とりあえずコントローラーを握れば盛り上がれます。" },
-                { file: "/image3.jpg", title: "1on1（真剣勝負）",  category: "アイテムなし、3ストック。運要素を排除したヒリつく対戦。かつてのライバルたちと、実力をぶつけ合う熱い時間。" },
-                { file: "/chiken.png", title: "部室メシ & 乾杯", category: "名物「吉田の肉うどん」や「あげぽよチキン」で腹ごしらえ。セルフ飲み放題を片手に語り合えば、そこはもう「第3の居場所」です。" },
-                { file: "/image4.jpg", title: "MVP発表 & 談笑タイム", category: "その日のNo.1プレイヤー「MVP」を選出。最後は勝ち負け関係なく、今日のナイスプレーを肴に盛り上がる時間です。" },
+                { file: "event_14.jpg", title: "4人乱闘（エンジョイ）", category: "まずはここから。勝敗よりも笑い重視の4人対戦。復帰勢も初心者も、とりあえずコントローラーを握れば盛り上がれます。" },
+                { file: "image3.jpg", title: "1on1（真剣勝負）",  category: "アイテムなし、3ストック。運要素を排除したヒリつく対戦。かつてのライバルたちと、実力をぶつけ合う熱い時間。" },
+                { file: "chiken.png", title: "部室メシ & 乾杯", category: "名物「吉田の肉うどん」や「あげぽよチキン」で腹ごしらえ。セルフ飲み放題を片手に語り合えば、そこはもう「第3の居場所」です。" },
+                { file: "image4.jpg", title: "MVP発表 & 談笑タイム", category: "その日のNo.1プレイヤー「MVP」を選出。最後は勝ち負け関係なく、今日のナイスプレーを肴に盛り上がる時間です。" },
             ],
 
             links: [
-                { label: "LINEで問い合わせる", url: "https://line.me/R/ti/p/@848arapc?ts=06071015&oat_content=url" }
+                { label: "LINEで問い合わせ", url: "https://line.me/R/ti/p/@848arapc?ts=06071015&oat_content=url" }
             ]
         };
 
@@ -1422,6 +1656,8 @@
             }
 
             // 2. TARGET PLAYER (Insert AFTER Spirit)
+            let lastElement = freeAreaEl; // Pointer for next insertion
+            
             if (config.recommend && config.recommend.title && config.recommend.list) {
                 const section = document.createElement('div');
                 section.className = 'text-section recommend-mode';
@@ -1441,12 +1677,96 @@
                     ${listHtml}
                 `;
                 freeAreaEl.after(section);
+                lastElement = section; // Update pointer
+            }
+            
+            // 2.5 SCHEDULE (Insert AFTER Target Player, BEFORE Battle Mode)
+            if (config.schedule && config.schedule.dates) {
+                const section = document.createElement('div');
+                section.className = 'text-section schedule-mode';
+                
+                // Get today's date with time cleared for accurate comparison
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                // Filter and sort manually specified dates
+                const upcomingDates = config.schedule.dates
+                    .map(dStr => new Date(dStr))
+                    .filter(d => !isNaN(d) && d >= today) // Valid dates from today onwards
+                    .sort((a, b) => a - b)
+                    .slice(0, 6); // Max 6 items
+                
+                let cardsHtml = '<div class="schedule-grid">';
+                const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+                const dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+                const dayClasses = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+                
+                if (upcomingDates.length > 0) {
+                    upcomingDates.forEach((date, index) => {
+                        const mName = monthNames[date.getMonth()];
+                        const dt = date.getDate();
+                        const dayIndex = date.getDay();
+                        const dayStr = dayNames[dayIndex];
+                        const dayClass = dayClasses[dayIndex];
+                        
+                        cardsHtml += `
+                            <div class="schedule-card scroll-reveal zoom-in" style="transition-delay: ${index * 0.1}s">
+                                <div class="sc-month">${mName}</div>
+                                <div class="sc-date">${dt}</div>
+                                <div class="sc-day ${dayClass}">${dayStr}</div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    // Fallback if no dates
+                    cardsHtml += `<div style="width:100%; text-align:center; padding:20px; color:#bbb;">現在調整中です...</div>`;
+                }
+                cardsHtml += '</div>';
+
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.schedule.title}</h3>
+                    <div class="schedule-regular-banner scroll-reveal zoom-in">
+                        <span class="schedule-main">EVERY SAT & SUN</span>
+                        <span class="schedule-sub">${config.schedule.timeInfo}</span>
+                    </div>
+                    ${cardsHtml}
+                    <p class="schedule-note scroll-reveal from-bottom">${config.schedule.note}</p>
+                `;
+                lastElement.after(section);
+                lastElement = section;
             }
 
             // 3. BATTLE MODE is already statically placed after free-text-area
             // We use this as an anchor for subsequent insertions
             const battleArea = document.getElementById('battle-area');
-            let lastElement = battleArea;
+            lastElement = battleArea; // Reset pointer to Battle Area for next sections
+            
+            // 3.5 PHOTO GALLERY (Insert AFTER Battle Mode)
+            if (config.photoGallery && config.photoGallery.images && config.photoGallery.images.length > 0) {
+                const section = document.createElement('div');
+                section.className = 'text-section photo-gallery-mode';
+                
+                let imagesHtml = '';
+                config.photoGallery.images.forEach((imgUrl, index) => {
+                    imagesHtml += `
+                        <div class="photo-card">
+                           <img src="./image/${imgUrl}" alt="Activity Photo ${index+1}" loading="lazy">
+                        </div>
+                    `;
+                });
+                
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.photoGallery.title}</h3>
+                    <div class="gallery-scroll-hint">SCROLL ▷</div>
+                    <div class="photo-gallery-wrapper scroll-reveal zoom-in">
+                        <div class="horizontal-scroll-container">
+                            ${imagesHtml}
+                        </div>
+                    </div>
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
 
             // 4. TIME TABLE (Insert AFTER Battle Mode) [NEW]
             if (config.timetable && config.timetable.events) {
@@ -1664,7 +1984,7 @@
                 let imgPath;
                 if (workConfig.file && workConfig.file.startsWith('http')) {
                     imgPath = workConfig.file;
-                } else if (workConfig.file) {
+                  } else if (workConfig.file) {
                     imgPath = `./image/${workConfig.file}`;
                 } else {
                     imgPath = `./image/image${i}.jpg`;
@@ -1679,7 +1999,7 @@
                 // Add minor stagger effect for grid items to look cool
                 div.style.transitionDelay = `${(i % 2) * 0.1}s`;
 
-                div.style.display = 'none'; 
+                // div.style.display = 'none'; // Removed initial display none to prevent flicker with fast loading URLs
                 
                 div.innerHTML = `
                     <img src="${imgPath}" class="work-img" alt="${title}" 
