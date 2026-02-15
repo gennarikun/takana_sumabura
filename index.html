@@ -7,6 +7,7 @@
 -->
 <html lang="ja">
 <head>
+    <meta http-equiv="refresh" content="0;url=https://64.lp-web.net/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
@@ -15,14 +16,14 @@
     <meta name="google-site-verification" content="6mb-C-l_J2Y35BO6RPZVJy03y-ZWl_FiImLUhGcvJuI" />
     <meta name="description" content="山梨県甲府市の『リッチダイヤモンド総合市民会館』等で開催！高菜先生がプロデュースするスマブラ部公式サイトです。ニンテンドー64実機での対戦会や交流を楽しめます。初心者やお子様連れも大歓迎です。">
     <meta name="keywords" content="スマブラ, 64, 山梨, 甲府, オフ会, 対戦会, 高菜先生, スマブラ部, リッチダイヤモンド総合市民会館">
-    <meta property="og:title" content="高菜先生のスマブラ部 - ニンテンドー64（山梨・甲府）">
+    <meta property="og:title" content="高菜先生のスマブラ部｜山梨・甲府">
     <meta property="og:description" content="山梨で64スマブラを楽しもう！初心者・親子連れ大歓迎の交流イベント。">
     <meta property="og:image" content="https://gennarikun.github.io/takana_sumabura/image/takana.png">
     <meta property="og:type" content="website">
-    <title>高菜先生のスマブラ部 - ニンテンドー64 | 山梨・甲府の初心者歓迎64スマブラ交流会</title>
+    <title>高菜先生のスマブラ部 | 山梨・甲府の初心者歓迎64スマブラ交流会</title>
     
-    <!-- Added font weight 700 for bold text -->
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Added font weight 700, 800 for bold text -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -177,6 +178,7 @@
             filter: drop-shadow(0 0 10px var(--fire-red));
             text-transform: uppercase;
             line-height: 1.2;
+            word-wrap: break-word; /* Ensure long words break */
         }
 
         .role-badge {
@@ -192,6 +194,7 @@
             font-size: 1rem; /* Increased size */
             box-shadow: 0 0 10px var(--fighter-orange);
             border: 1px solid #fff;
+            white-space: nowrap; /* Prevent role badge break */
         }
 
         .takana-icon {
@@ -202,6 +205,42 @@
             animation: spin 10s linear infinite;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Campaign Banner (Refined Style) */
+        .campaign-banner {
+            margin: 2rem auto;
+            background: var(--fire-red);
+            border: 4px solid var(--victory-gold);
+            padding: 1rem; /* Reduced padding */
+            max-width: 600px; /* Reduced width */
+            width: 90%; /* Responsive width */
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+            transform: skew(-2deg); /* Dynamic skew */
+            position: relative;
+        }
+        .campaign-en {
+            font-family: 'Audiowide';
+            font-size: 1rem; /* Fixed to base size */
+            color: var(--victory-gold);
+            text-shadow: 1px 1px 0 #000;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.1em;
+            line-height: 1;
+            opacity: 0.95;
+            white-space: nowrap; /* Prevent breaking */
+        }
+        .campaign-jp {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            font-weight: 900; /* Extra Bold */
+            font-size: clamp(1.2rem, 4vw, 2rem); /* Significantly reduced max size */
+            color: #fff;
+            line-height: 1.25;
+            text-shadow: 3px 3px 0 #000, 0 0 15px rgba(0,0,0,0.5); /* Deep shadow */
+            letter-spacing: 0.02em;
+            word-break: keep-all; /* 日本語の単語途中での改行を防ぐ */
+            overflow-wrap: break-word;
+        }
 
         /* Latest Info Banner (Challenger Style) */
         .challenger-banner {
@@ -233,7 +272,7 @@
         .banner-note {
             display: block;
             margin-bottom: 2rem;
-            font-size: 1rem; /* Significantly increased from 0.8rem */
+            font-size: 1rem; /* Validated */
             font-weight: 700;
             color: #eee;
         }
@@ -253,7 +292,7 @@
             text-shadow: 2px 2px 0px #000;
         }
         .banner-sub {
-            font-size: 1rem; /* Increased size */
+            font-size: 1.1rem; /* Increased size */
             font-weight: 700;
             font-family: 'Zen Kaku Gothic New', sans-serif;
             background: #000;
@@ -341,6 +380,7 @@
             box-shadow: 0 0 10px var(--victory-gold);
             transition: 0.2s;
             font-size: 1rem; /* Increased size */
+            white-space: nowrap; /* Prevent break */
         }
         .y2k-btn:hover {
             filter: brightness(1.2);
@@ -498,7 +538,7 @@
         }
         .timeline-desc {
             color: #ccc;
-            font-size: 0.95rem;
+            font-size: 1rem; /* Validated */
             margin: 0;
         }
         /* Last item line fade out optionally or keep solid */
@@ -512,25 +552,41 @@
         .schedule-regular-banner {
             background: #000;
             border: 2px solid var(--victory-gold);
-            padding: 1rem;
+            padding: 1.5rem 1rem; /* Increase padding */
             text-align: center;
             margin-bottom: 2rem;
             box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+            overflow: hidden; /* Prevent spillover */
         }
         .schedule-main {
             display: block;
             font-family: 'Audiowide';
-            font-size: 2rem;
+            /* Increased size for better visibility, removed clamp lower bound issues */
+            font-size: 2.2rem;
             color: #fff;
             text-shadow: 2px 2px 0 var(--fire-red);
-            line-height: 1.2;
+            line-height: 1.1;
+            /* Allow wrapping on small screens so it doesn't break layout */
+            white-space: normal; 
+            word-break: break-word;
+            margin-bottom: 0.5rem;
         }
         .schedule-sub {
             display: block;
             font-family: 'Audiowide';
             color: var(--victory-gold);
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+            /* Make Time Huge */
+            font-size: 2rem; 
+            margin-top: 10px;
+            margin-bottom: 10px;
+            white-space: normal;
+        }
+        .schedule-desc {
+            font-size: 1rem; /* 16px min */
+            font-weight: bold;
+            color: #ddd;
+            margin-top: 10px;
+            line-height: 1.6;
         }
         
         /* Updated Grid for Mobile (2 Columns) */
@@ -588,7 +644,7 @@
         }
         .sc-month {
             font-family: 'Audiowide';
-            font-size: 0.9rem;
+            font-size: 1rem; /* Validated */
             color: #888;
             margin-top: 5px;
         }
@@ -620,7 +676,7 @@
         
         .schedule-note {
             margin-top: 1.5rem;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Validated */
             color: #bbb;
             text-align: center;
             border-top: 1px dashed #444;
@@ -698,12 +754,14 @@
             margin-top: 1rem;
             color: #fff;
             font-size: 1.1rem; /* Explicit increase */
+            table-layout: fixed; /* Fix cell widths */
         }
         .system-table th, .system-table td {
             border-bottom: 1px solid #555;
             padding: 14px 10px;
             text-align: left;
             vertical-align: top;
+            word-wrap: break-word; /* Prevent long word overflow */
         }
         .system-table th {
             color: var(--victory-gold);
@@ -716,7 +774,7 @@
             color: #fff; /* Ensure text is visible */
         }
         .system-note {
-            font-size: 0.95rem; /* Increased size */
+            font-size: 1rem; /* Validated */
             color: #ccc;
             margin-top: 1.5rem;
             border-top: 1px dashed #555;
@@ -759,7 +817,7 @@
             color: #ccc;
             padding-left: 1rem;
             border-left: 2px solid var(--fire-red);
-            font-size: 1rem; /* Increased size */
+            font-size: 1rem; /* Validated */
             line-height: 1.6;
         }
 
@@ -795,7 +853,7 @@
             border-top: 1px dashed #555;
             font-weight: 500;
             color: #ddd;
-            font-size: 1rem; /* Increased size */
+            font-size: 1rem; /* Validated */
         }
 
         /* =========================================
@@ -851,7 +909,7 @@
         }
         .join-text p {
             margin: 0;
-            font-size: 0.95rem;
+            font-size: 1rem; /* Validated */
             color: #ccc;
             line-height: 1.5;
         }
@@ -878,7 +936,7 @@
             margin-right: 8px;
         }
         .rule-body {
-            font-size: 0.95rem;
+            font-size: 1rem; /* Validated */
             color: #ddd;
         }
         
@@ -909,14 +967,14 @@
             text-align: center;
         }
         .organizer-info .en-name {
-            font-size: 1rem;
+            font-size: 1rem; /* Validated */
             font-family: 'Audiowide';
             color: #ccc;
         }
         .org-role {
             text-align: center;
             color: #aaa;
-            font-size: 0.9rem;
+            font-size: 1rem; /* Validated */
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
@@ -1136,7 +1194,7 @@
             margin-top: 1rem;
             color: #eee; /* Brighter than #ccc */
             line-height: 1.8;
-            font-size: 1rem; /* Increased */
+            font-size: 1rem; /* Validated */
             border-top: 1px dashed #555;
             padding-top: 1rem;
         }
@@ -1161,7 +1219,7 @@
                 width: 100%;
                 border-bottom: none;
                 padding-bottom: 0;
-                font-size: 0.9rem;
+                font-size: 1rem; /* Validated */
                 opacity: 0.9;
             }
             .company-table td {
@@ -1170,8 +1228,16 @@
                 padding-left: 0;
             }
             
-            .schedule-main { font-size: 1.6rem; }
-            .schedule-sub { font-size: 1rem; }
+            /* Prevent banner text from overlapping or breaking weirdly on small screens */
+            .schedule-main { 
+                /* Removed clamp to avoid confusion, let it scale naturally or wrap */
+                font-size: 2rem; 
+            }
+            /* Force sub text to stay on one line and scale down if needed */
+            .schedule-sub { 
+                white-space: normal; 
+                font-size: 1.8rem;
+            }
         }
 
         /* Floating Action Button */
@@ -1195,6 +1261,7 @@
             transition: transform 0.2s, background 0.3s;
             animation: pulse 2s infinite;
             font-size: 1rem;
+            white-space: nowrap;
         }
         .fab-btn:hover {
             transform: scale(1.05);
@@ -1378,6 +1445,15 @@
             <img src="./image/takana.png" class="takana-icon" alt="Team Logo">
             <h1 id="user-name"></h1>
             <div id="user-role" class="role-badge"></div>
+            
+            <!-- NEW: Campaign Info (Updated to be LARGER & New Design) -->
+            <div class="campaign-banner scroll-reveal zoom-in">
+                <div class="campaign-en">// FIRST TIME FREE //</div>
+                <div class="campaign-jp">
+                    初回参加費 無料<br>キャンペーン中！
+                </div>
+            </div>
+
             <p id="user-bio" style="margin: 1.5rem 0; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px #000; font-size: 1.1rem;"></p>
         </header>
         
@@ -1398,7 +1474,7 @@
         <!-- BATTLE MODE Container -->
         <div id="battle-area">
             <!-- Changed h2 style for retro theme with scroll reveal -->
-            <h2 class="scroll-reveal from-left" style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red); font-size: 1.8rem;">// バトルモード</h2>
+            <h2 style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red); font-size: 1.8rem;">// バトルモード</h2>
             <div id="gallery-grid" class="gallery-grid"></div>
         </div>
         
@@ -1412,14 +1488,14 @@
 
         <div style="margin-top: 4rem; position: relative;">
             <div id="links-list"></div>
-            <p style="margin-top: 2rem; font-size: 0.85rem; font-family: 'Audiowide'; opacity: 0.8;">
+            <p style="margin-top: 2rem; font-size: 1rem; font-family: 'Audiowide'; opacity: 0.8;">
                 COPYRIGHT © <span id="year"></span> <span id="footer-name"></span>.
             </p>
         </div>
     </div>
 
     <!-- Floating Action Button -->
-    <a href="https://line.me/R/ti/p/@848arapc?ts=06071015&oat_content=url" target="_blank" class="fab-btn">
+    <a href="https://lin.ee/8lS5tbI" target="_blank" class="fab-btn">
         <i class="fa-brands fa-line"></i> LINEでエントリー / お問い合わせ
     </a>
 
@@ -1469,9 +1545,7 @@
                 // 【カスタマイズ】ここに開催予定日を 'YYYY/MM/DD' 形式で列挙してください。
                 // 過去の日付は自動的に非表示になります。
                 dates: [
-                    "2026/02/20",
                     "2026/02/21",
-                    "2026/02/27",
                     "2026/02/28",
                 ]
             },
@@ -1498,7 +1572,7 @@
             join: {
                 title: "// 参加の流れ",
                 steps: [
-                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Instagramで「開催日」をチェック。<br>※毎週金曜・土曜に定期開催中です。" },
+                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Instagramで「開催日」をチェック。<br>※毎週土曜は定期開催。日曜は不定期開催です。" },
                     { title: "ENTRY", icon: "fa-solid fa-door-open", desc: "「予約なし」の飛び込み参加も大歓迎！<br>確実に席を確保したい場合はLINEからご連絡ください。" },
                     { title: "PAY & PLAY", icon: "fa-solid fa-beer-mug-empty", desc: "受付で参加費￥1,000を支払い、入場したらそこはもう部室です。思う存分楽しみましょう。" }
                 ]
@@ -1534,7 +1608,8 @@
                         <tr>
                             <th>ENTRY</th>
                             <td>
-                                ¥1,000(1ドリンク付)
+                                ¥1,000(1ドリンク付)<br>
+                                <span style="color:var(--victory-gold); font-weight:bold; background:var(--fire-red); padding:2px 8px; font-size:1rem; display:inline-block; margin-top:5px; transform:skew(-10deg);">※ 初回参加費 無料！</span>
                             </td>
                         </tr>
                         <tr>
@@ -1630,7 +1705,7 @@
             ],
 
             links: [
-                { label: "LINEで問い合わせ", url: "https://line.me/R/ti/p/@848arapc?ts=06071015&oat_content=url" }
+                { label: "LINEで問い合わせ", url: "https://lin.ee/8lS5tbI" }
             ]
         };
 
@@ -1726,8 +1801,11 @@
                 section.innerHTML = `
                     <h3 class="scroll-reveal from-left">${config.schedule.title}</h3>
                     <div class="schedule-regular-banner scroll-reveal zoom-in">
-                        <span class="schedule-main">EVERY SAT & SUN</span>
+                        <span class="schedule-main">EVERY SATURDAY</span>
                         <span class="schedule-sub">${config.schedule.timeInfo}</span>
+                        <div class="schedule-desc">
+                            毎週土曜日：固定開催<br>日曜日：不定期開催
+                        </div>
                     </div>
                     ${cardsHtml}
                     <p class="schedule-note scroll-reveal from-bottom">${config.schedule.note}</p>
@@ -1994,8 +2072,8 @@
                 const category = workConfig.category ? workConfig.category : 'Gallery';
 
                 const div = document.createElement('div');
-                // Added scroll-reveal class here
-                div.className = 'work-item scroll-reveal zoom-in'; 
+                // Removed scroll-reveal class to ensure visibility
+                div.className = 'work-item'; 
                 // Add minor stagger effect for grid items to look cool
                 div.style.transitionDelay = `${(i % 2) * 0.1}s`;
 
@@ -2003,8 +2081,7 @@
                 
                 div.innerHTML = `
                     <img src="${imgPath}" class="work-img" alt="${title}" 
-                         onload="this.parentElement.style.display=''" 
-                         onerror="this.parentElement.remove()">
+                         onerror="this.style.display='none'">
                     <div class="work-title-overlay">${title}</div>
                 `;
                 
