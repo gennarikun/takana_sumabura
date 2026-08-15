@@ -6,38 +6,61 @@
   © 2025 EYAN / トミナガハルキ
 -->
 <html lang="ja">
+
 <head>
-    <meta http-equiv="refresh" content="0;url=https://64.lp-web.net/">
+    <link rel="canonical" href="https://64.lp-web.net/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="./image/takana.png" type="image/png">
     <link rel="apple-touch-icon" href="./image/takana.png">
     <meta name="google-site-verification" content="6mb-C-l_J2Y35BO6RPZVJy03y-ZWl_FiImLUhGcvJuI" />
-    <meta name="description" content="山梨県甲府市の『リッチダイヤモンド総合市民会館』等で開催！高菜先生がプロデュースするスマブラ部公式サイトです。ニンテンドー64実機での対戦会や交流を楽しめます。初心者やお子様連れも大歓迎です。">
+    <meta name="description"
+        content="山梨県甲府市の『リッチダイヤモンド総合市民会館』等で開催！高菜先生がプロデュースするスマブラ部公式サイトです。ニンテンドー64実機での対戦会や交流を楽しめます。あの頃夢中になった大人たちの大事なサードプレイス。">
     <meta name="keywords" content="スマブラ, 64, 山梨, 甲府, オフ会, 対戦会, 高菜先生, スマブラ部, リッチダイヤモンド総合市民会館">
-    <meta property="og:title" content="高菜先生のスマブラ部｜山梨・甲府">
-    <meta property="og:description" content="山梨で64スマブラを楽しもう！初心者・親子連れ大歓迎の交流イベント。">
-    <meta property="og:image" content="https://gennarikun.github.io/takana_sumabura/image/takana.png">
+    <meta property="og:title" content="高菜先生のスマブラ部｜山梨・甲府の64スマブラ交流会">
+    <meta property="og:description" content="山梨で64スマブラを楽しもう！あの頃夢中になった大人たちの大事なサードプレイス。">
+    <meta property="og:image" content="https://64.lp-web.net/image/takana.png">
     <meta property="og:type" content="website">
     <title>高菜先生のスマブラ部 | 山梨・甲府の初心者歓迎64スマブラ交流会</title>
-    
+
     <!-- Added font weight 700, 800 for bold text -->
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1556782068916269');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1556782068916269&ev=PageView&noscript=1" /></noscript>
+
     <style>
         /* =========================================
            カスタマイズ設定 (RETRO FIGHTING GAME THEME)
            ========================================= */
         :root {
-            --bg-color: #1a1a1a; /* Dark Grey like stone/brick */
+            --bg-color: #1a1a1a;
+            /* Dark Grey like stone/brick */
             /* Retro Fighting Game Gradients */
             --chrome: linear-gradient(180deg, #fff 0%, #ddd 40%, #bbb 50%, #999 51%, #fff 100%);
             --fire-red: #e60012;
             --fighter-orange: #ff6600;
             --victory-gold: #ffcc00;
-            
+
             /* Mapping old vars to new theme for compatibility */
             --theme-accent: var(--victory-gold);
             --theme-hot: var(--fire-red);
@@ -48,29 +71,33 @@
            基本スタイル
            ========================================= */
         html {
-            font-size: 16px; /* SP Base Size */
+            font-size: 16px;
+            /* SP Base Size */
         }
+
         @media (min-width: 768px) {
             html {
-                font-size: 18px; /* PC Base Size */
+                font-size: 18px;
+                /* PC Base Size */
             }
         }
 
         body {
             background-color: var(--bg-color);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 50% 50%, #330000 0%, var(--bg-color) 80%),
-                linear-gradient(0deg, rgba(255,102,0,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,0,0,0.1) 1px, transparent 1px);
+                linear-gradient(0deg, rgba(255, 102, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
             background-size: 100% 100%, 40px 40px, 40px 40px;
             color: #fff;
             font-family: 'Zen Kaku Gothic New', sans-serif;
             margin: 0;
-            padding: 2rem 1rem;
+            padding: 2rem 0rem;
             min-height: 100vh;
             text-align: center;
             overflow-x: hidden;
-            padding-bottom: 80px; /* Floating button space */
+            padding-bottom: 80px;
+            /* Floating button space */
             line-height: 1.6;
         }
 
@@ -78,10 +105,12 @@
             max-width: 900px;
             margin: 0 auto;
             border: 2px solid #555;
-            border-radius: 4px; /* Slightly sharper corners */
+            border-radius: 4px;
+            /* Slightly sharper corners */
             background: rgba(20, 20, 20, 0.8);
             backdrop-filter: blur(5px);
-            box-shadow: 0 0 20px rgba(255, 100, 0, 0.3); /* Orange glow */
+            box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
+            /* Orange glow */
             padding: 2rem;
             position: relative;
             animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -90,22 +119,28 @@
         }
 
         @keyframes popIn {
-            to { opacity: 1; transform: scale(1); }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* --- 改行設定 --- */
         .sp-br {
             display: none;
         }
+
         .pc-br {
             display: block;
         }
+
         @media (max-width: 767px) {
+
             /* 先ほどのスマホ用改行の設定があればそのまま維持 */
             .sp-br {
                 display: block;
             }
-            
+
             /* ▼ 今回追加：PC用改行をスマホで隠す設定 ▼ */
             .pc-br {
                 display: none;
@@ -120,19 +155,22 @@
             transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             will-change: opacity, transform;
         }
+
         /* 下から浮き上がる */
         .scroll-reveal.from-bottom {
             transform: translateY(30px);
         }
+
         /* 左からスライドイン（見出し等） */
         .scroll-reveal.from-left {
             transform: translateX(-50px);
         }
+
         /* ズームイン（画像やカード等） */
         .scroll-reveal.zoom-in {
             transform: scale(0.9);
         }
-        
+
         /* アクティブ状態（表示） */
         .reveal-active {
             opacity: 1;
@@ -151,19 +189,26 @@
             background-position: center;
             border-radius: 4px 4px 0 0;
             z-index: 1;
-            border-bottom: 4px solid var(--fire-red); /* Stronger border */
+            border-bottom: 4px solid var(--fire-red);
+            /* Stronger border */
         }
+
         @media (min-width: 768px) {
-          header {
-            background-position: center bottom -120px;
-          }
+            header {
+                background-position: center bottom -120px;
+            }
         }
+
         /* Overlay for text readability */
         header::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            /* Darker overlay */
             z-index: -1;
             backdrop-filter: blur(2px);
         }
@@ -172,18 +217,22 @@
             font-family: 'Audiowide', cursive;
             font-size: clamp(2rem, 5vw, 3.5rem);
             margin: 0;
-            background: linear-gradient(180deg, #fff 0%, #ffcc00 50%, #e60012 100%); /* Gold/Red Title */
+            background: linear-gradient(180deg, #fff 0%, #ffcc00 50%, #e60012 100%);
+            /* Gold/Red Title */
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 10px var(--fire-red));
             text-transform: uppercase;
             line-height: 1.2;
-            word-wrap: break-word; /* Ensure long words break */
+            word-wrap: break-word;
+            /* Ensure long words break */
         }
 
         .role-badge {
             display: inline-block;
-            background: var(--theme-gradient); /* Red/Yellow Gradient */
+            background: var(--theme-gradient);
+            /* Red/Yellow Gradient */
             color: #000;
             font-weight: bold;
             padding: 5px 20px;
@@ -191,10 +240,12 @@
             margin: 1rem 0;
             font-family: 'Audiowide';
             transform: skew(-15deg);
-            font-size: 1rem; /* Increased size */
+            font-size: 1rem;
+            /* Increased size */
             box-shadow: 0 0 10px var(--fighter-orange);
             border: 1px solid #fff;
-            white-space: nowrap; /* Prevent role badge break */
+            white-space: nowrap;
+            /* Prevent role badge break */
         }
 
         .takana-icon {
@@ -204,55 +255,71 @@
             margin-bottom: 0.5rem;
             animation: spin 10s linear infinite;
         }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
         /* Campaign Banner (Refined Style) */
         .campaign-banner {
             margin: 2rem auto;
             background: var(--fire-red);
             border: 4px solid var(--victory-gold);
-            padding: 1rem; /* Reduced padding */
-            max-width: 600px; /* Reduced width */
-            width: 90%; /* Responsive width */
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(0,0,0,0.3);
+            padding: 1rem;
+            /* Reduced padding */
+            max-width: 600px;
+            /* Reduced width */
+            width: 90%;
+            /* Responsive width */
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.3);
             animation: pulse 2s infinite;
-            transform: skew(-2deg); /* Dynamic skew */
+            transform: skew(-2deg);
+            /* Dynamic skew */
             position: relative;
         }
+
         .campaign-en {
             font-family: 'Audiowide';
-            font-size: 1rem; /* Fixed to base size */
+            font-size: 1rem;
+            /* Fixed to base size */
             color: var(--victory-gold);
             text-shadow: 1px 1px 0 #000;
             margin-bottom: 0.2rem;
             letter-spacing: 0.1em;
             line-height: 1;
             opacity: 0.95;
-            white-space: nowrap; /* Prevent breaking */
+            white-space: nowrap;
+            /* Prevent breaking */
         }
+
         .campaign-jp {
             font-family: 'Zen Kaku Gothic New', sans-serif;
-            font-weight: 900; /* Extra Bold */
-            font-size: clamp(1.2rem, 4vw, 2rem); /* Significantly reduced max size */
+            font-weight: 900;
+            /* Extra Bold */
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            /* Significantly reduced max size */
             color: #fff;
             line-height: 1.25;
-            text-shadow: 3px 3px 0 #000, 0 0 15px rgba(0,0,0,0.5); /* Deep shadow */
+            text-shadow: 3px 3px 0 #000, 0 0 15px rgba(0, 0, 0, 0.5);
+            /* Deep shadow */
             letter-spacing: 0.02em;
-            word-break: keep-all; /* 日本語の単語途中での改行を防ぐ */
+            word-break: keep-all;
+            /* 日本語の単語途中での改行を防ぐ */
             overflow-wrap: break-word;
         }
 
         /* Latest Info Banner (Challenger Style) */
         .challenger-banner {
             display: block;
-            margin: 0 -2rem 1rem -2rem; /* Full width */
-            background: repeating-linear-gradient(
-                45deg,
-                #300,
-                #300 10px,
-                #500 10px,
-                #500 20px
-            );
+            margin: 0 -2rem 1rem -2rem;
+            /* Full width */
+            background: repeating-linear-gradient(45deg,
+                    #300,
+                    #300 10px,
+                    #500 10px,
+                    #500 20px);
             color: #fff;
             text-decoration: none;
             padding: 1.5rem 1rem;
@@ -264,26 +331,42 @@
             transition: transform 0.2s;
             cursor: pointer;
         }
+
         .challenger-banner:hover {
             transform: scale(1.02);
             filter: brightness(1.3);
             z-index: 10;
         }
+
         .banner-note {
             display: block;
             margin-bottom: 2rem;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             font-weight: 700;
             color: #eee;
         }
 
         @keyframes alertBlink {
-            0%, 90%, 100% { box-shadow: 0 0 10px var(--fire-red); border-color: var(--fire-red); }
-            95% { box-shadow: 0 0 30px var(--fire-red), inset 0 0 30px var(--fire-red); border-color: var(--victory-gold); background-color: #800; }
+
+            0%,
+            90%,
+            100% {
+                box-shadow: 0 0 10px var(--fire-red);
+                border-color: var(--fire-red);
+            }
+
+            95% {
+                box-shadow: 0 0 30px var(--fire-red), inset 0 0 30px var(--fire-red);
+                border-color: var(--victory-gold);
+                background-color: #800;
+            }
         }
+
         .banner-title {
             font-family: 'Audiowide', cursive;
-            font-size: 1.4rem; /* Adjusted size */
+            font-size: 1.4rem;
+            /* Adjusted size */
             text-transform: uppercase;
             display: block;
             margin-bottom: 0.5rem;
@@ -291,8 +374,10 @@
             color: var(--victory-gold);
             text-shadow: 2px 2px 0px #000;
         }
+
         .banner-sub {
-            font-size: 1.1rem; /* Increased size */
+            font-size: 1.1rem;
+            /* Increased size */
             font-weight: 700;
             font-family: 'Zen Kaku Gothic New', sans-serif;
             background: #000;
@@ -319,30 +404,34 @@
             overflow: hidden;
             cursor: pointer;
             transition: 0.3s;
-            aspect-ratio: 1; /* 正方形固定 */
+            aspect-ratio: 1;
+            /* 正方形固定 */
             background: #111;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .work-item:hover {
-            transform: scale(1.03) !important; /* Ensure hover works even with scroll reveal transform override if active */
+            transform: scale(1.03) !important;
+            /* Ensure hover works even with scroll reveal transform override if active */
             box-shadow: 0 0 20px var(--fighter-orange);
             border-color: var(--victory-gold);
             z-index: 2;
         }
-        
+
         /* Fix for scroll reveal conflict with hover */
         .work-item.reveal-active:hover {
-             transform: scale(1.03) !important;
+            transform: scale(1.03) !important;
         }
 
         .work-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* はみ出し部分をトリミング */
+            object-fit: cover;
+            /* はみ出し部分をトリミング */
             display: block;
             transition: transform 0.5s;
         }
+
         .work-item:hover .work-img {
             transform: scale(1.1);
         }
@@ -353,17 +442,24 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0,0,0,0.9); /* Almost black */
+            background: rgba(0, 0, 0, 0.9);
+            /* Almost black */
             padding: 12px 10px;
-            font-size: 1.2rem; /* Large Font */
-            font-weight: 700; /* Bold */
+            font-size: 1.1rem;
+            /* Slightly reduced for longer text */
+            font-weight: 700;
+            /* Bold */
             font-family: 'Zen Kaku Gothic New', sans-serif;
-            color: var(--victory-gold); /* Gold text */
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            border-top: 2px solid var(--fire-red); /* Red Accent */
+            color: var(--victory-gold);
+            /* Gold text */
+            white-space: normal;
+            /* Allow wrapping */
+            word-wrap: break-word;
+            /* Ensure long words break */
+            border-top: 2px solid var(--fire-red);
+            /* Red Accent */
             text-shadow: 0 2px 4px #000;
+            line-height: 1.3;
         }
 
         .y2k-btn {
@@ -379,9 +475,12 @@
             border: 2px solid #fff;
             box-shadow: 0 0 10px var(--victory-gold);
             transition: 0.2s;
-            font-size: 1rem; /* Increased size */
-            white-space: nowrap; /* Prevent break */
+            font-size: 1rem;
+            /* Increased size */
+            white-space: nowrap;
+            /* Prevent break */
         }
+
         .y2k-btn:hover {
             filter: brightness(1.2);
             background: var(--victory-gold);
@@ -394,10 +493,12 @@
             border: 1px dashed var(--fighter-orange);
             border-radius: 8px;
             padding: 2rem 1rem;
-            margin: 6rem 0; /* Increased margin for better separation */
+            margin: 6rem 0;
+            /* Increased margin for better separation */
             text-align: left;
             position: relative;
         }
+
         .text-section::before {
             content: "INFO";
             position: absolute;
@@ -406,84 +507,112 @@
             background: #000;
             padding: 0 10px;
             font-family: 'Audiowide';
-            font-size: 1rem; /* Increased size */
+            font-size: 1rem;
+            /* Increased size */
             color: var(--victory-gold);
             border: 1px solid var(--fighter-orange);
             border-radius: 4px;
         }
+
         /* アクセス情報用のラベル上書き */
         .text-section.access-mode::before {
             content: "STAGE";
         }
+
         /* システム情報用のラベル上書き */
         .text-section.system-mode::before {
             content: "SYSTEM";
         }
+
         /* おすすめ情報用のラベル上書き */
         .text-section.recommend-mode::before {
             content: "TARGET";
         }
+
         /* 参加フロー用のラベル上書き */
         .text-section.join-mode::before {
             content: "FLOW";
         }
+
         /* ルール用のラベル上書き */
         .text-section.rules-mode::before {
             content: "RULE";
         }
+
         /* タイムテーブル用のラベル上書き */
         .text-section.timetable-mode::before {
             content: "TIME TABLE";
         }
+
         /* スケジュール用のラベル上書き */
         .text-section.schedule-mode::before {
             content: "SCHEDULE";
         }
-        
+
         /* 関連コミュニティ用のラベル上書き */
         .text-section.related-mode::before {
             content: "ALLIANCE";
         }
-        
+
         /* 運営会社用のラベル上書き */
         .text-section.company-mode::before {
             content: "COMPANY";
         }
-        
+
         /* 主催者用のラベル上書き */
         .text-section.organizer-mode::before {
             content: "ORGANIZER";
         }
-        
+
         /* フォトギャラリー用のラベル上書き */
         .text-section.photo-gallery-mode::before {
             content: "GALLERY";
         }
-        
+
+        /* closing-mode用のラベル上書き */
+        .text-section.closing-mode::before {
+            content: "JOIN US";
+        }
+
+        /* voices-mode用のラベル上書き */
+        .text-section.voices-mode::before {
+            content: "VOICE";
+        }
+
+        /* faq-mode用のラベル上書き */
+        .text-section.faq-mode::before {
+            content: "FAQ";
+        }
+
         .text-section h3 {
             font-family: 'Audiowide';
             color: var(--victory-gold);
             margin-top: 0;
             margin-bottom: 1.5rem;
-            font-size: 1.6rem; /* Increased size */
+            font-size: 1.6rem;
+            /* Increased size */
             letter-spacing: 1px;
             border-bottom: 2px solid var(--fire-red);
             padding-bottom: 0.5rem;
             display: inline-block;
             text-shadow: 1px 1px 0 #330000;
         }
+
         .text-section p {
             line-height: 1.9;
             color: #eee;
             margin-bottom: 1rem;
-            font-size: 1rem; /* Increased size */
+            font-size: 1rem;
+            /* Increased size */
+            text-align: left;
         }
+
         /* Highlight specific keywords in text */
         .highlight {
             color: var(--victory-gold);
             font-weight: bold;
         }
-        
+
         /* TIMELINE STYLES (UPDATED for alignment) */
         .timeline-container {
             display: flex;
@@ -491,33 +620,41 @@
             gap: 0;
             padding-top: 10px;
         }
+
         .timeline-item {
             display: grid;
-            grid-template-columns: 120px 4px 1fr; /* Increased width for "PRACTICE" */
+            grid-template-columns: 120px 4px 1fr;
+            /* Increased width for "PRACTICE" */
             gap: 20px;
             /* Ensures no extra space breaks the flow */
         }
+
         .timeline-time {
             text-align: right;
-            padding-top: 2px; /* Slight adjustment to align with title text */
+            padding-top: 2px;
+            /* Slight adjustment to align with title text */
             font-family: 'Audiowide';
             color: var(--victory-gold);
             font-size: 1.1rem;
         }
+
         .timeline-line-area {
             position: relative;
             display: flex;
             justify-content: center;
         }
+
         .timeline-line {
             width: 2px;
             height: 100%;
             background: var(--fire-red);
             position: relative;
         }
+
         .timeline-dot {
             position: absolute;
-            top: 8px; /* Approx center of first line of text */
+            top: 8px;
+            /* Approx center of first line of text */
             left: 50%;
             transform: translateX(-50%);
             width: 12px;
@@ -527,20 +664,26 @@
             box-shadow: 0 0 5px var(--fire-red);
             z-index: 2;
         }
+
         .timeline-content {
-            padding-bottom: 2rem; /* Spacing between events */
+            padding-bottom: 2rem;
+            /* Spacing between events */
         }
+
         .timeline-title {
             color: #fff;
             font-weight: bold;
             font-size: 1.1rem;
             margin: 0 0 5px;
         }
+
         .timeline-desc {
             color: #ccc;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             margin: 0;
         }
+
         /* Last item line fade out optionally or keep solid */
         .timeline-item:last-child .timeline-line {
             background: linear-gradient(to bottom, var(--fire-red) 20%, transparent 100%);
@@ -552,12 +695,15 @@
         .schedule-regular-banner {
             background: #000;
             border: 2px solid var(--victory-gold);
-            padding: 1.5rem 1rem; /* Increase padding */
+            padding: 1.5rem 1rem;
+            /* Increase padding */
             text-align: center;
             margin-bottom: 2rem;
             box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
-            overflow: hidden; /* Prevent spillover */
+            overflow: hidden;
+            /* Prevent spillover */
         }
+
         .schedule-main {
             display: block;
             font-family: 'Audiowide';
@@ -567,46 +713,51 @@
             text-shadow: 2px 2px 0 var(--fire-red);
             line-height: 1.1;
             /* Allow wrapping on small screens so it doesn't break layout */
-            white-space: normal; 
+            white-space: normal;
             word-break: break-word;
             margin-bottom: 0.5rem;
         }
+
         .schedule-sub {
             display: block;
             font-family: 'Audiowide';
             color: var(--victory-gold);
             /* Make Time Huge */
-            font-size: 2rem; 
+            font-size: 2rem;
             margin-top: 10px;
             margin-bottom: 10px;
             white-space: normal;
         }
+
         .schedule-desc {
-            font-size: 1rem; /* 16px min */
+            font-size: 1rem;
+            /* 16px min */
             font-weight: bold;
             color: #ddd;
             margin-top: 10px;
             line-height: 1.6;
         }
-        
+
         /* Updated Grid for Mobile (2 Columns) */
         .schedule-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Force 2 columns */
+            grid-template-columns: 1fr 1fr;
+            /* Force 2 columns */
             gap: 10px;
             margin-top: 1rem;
         }
-        
+
         .schedule-card {
             background: #111;
             border: 1px solid #444;
             border-radius: 6px;
-            width: auto; /* Let Grid handle width */
+            width: auto;
+            /* Let Grid handle width */
             max-width: none;
             padding: 10px;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s;
             overflow: hidden;
             /* Flex for content centering */
@@ -615,7 +766,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* PC Adjustment */
         @media (min-width: 600px) {
             .schedule-grid {
@@ -624,30 +775,37 @@
                 justify-content: center;
                 gap: 15px;
             }
+
             .schedule-card {
                 width: 140px;
                 max-width: 140px;
             }
         }
-        
+
         .schedule-card:hover {
             transform: translateY(-3px);
             border-color: var(--victory-gold);
         }
+
         /* Top accent bar */
         .schedule-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 4px;
             background: var(--fire-red);
         }
+
         .sc-month {
             font-family: 'Audiowide';
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             color: #888;
             margin-top: 5px;
         }
+
         .sc-date {
             font-family: 'Audiowide';
             font-size: 2rem;
@@ -656,6 +814,7 @@
             margin: 5px 0;
             letter-spacing: -1px;
         }
+
         .sc-day {
             font-family: 'Audiowide';
             font-size: 1rem;
@@ -666,21 +825,48 @@
             background: #222;
             color: #fff;
         }
-        .sc-day.sat { color: #8ecae6; } /* Saturday color */
-        .sc-day.fri { color: #ffb703; } /* Friday color */
-        .sc-day.sun { color: #e60012; }
-        .sc-day.mon { color: #fff; }
-        .sc-day.tue { color: #fff; }
-        .sc-day.wed { color: #fff; }
-        .sc-day.thu { color: #fff; }
-        
+
+        .sc-day.sat {
+            color: #8ecae6;
+        }
+
+        /* Saturday color */
+        .sc-day.fri {
+            color: #ffb703;
+        }
+
+        /* Friday color */
+        .sc-day.sun {
+            color: #e60012;
+        }
+
+        .sc-day.mon {
+            color: #fff;
+        }
+
+        .sc-day.tue {
+            color: #fff;
+        }
+
+        .sc-day.wed {
+            color: #fff;
+        }
+
+        .sc-day.thu {
+            color: #fff;
+        }
+
         .schedule-note {
             margin-top: 1.5rem;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             color: #bbb;
-            text-align: center;
             border-top: 1px dashed #444;
             padding-top: 1rem;
+        }
+
+        .text-section .schedule-note {
+            text-align: center;
         }
 
         /* =========================================
@@ -690,6 +876,7 @@
             margin-top: 1rem;
             position: relative;
         }
+
         .horizontal-scroll-container {
             display: flex;
             overflow-x: auto;
@@ -700,20 +887,25 @@
             scrollbar-width: thin;
             scrollbar-color: var(--victory-gold) #333;
         }
+
         .horizontal-scroll-container::-webkit-scrollbar {
             height: 6px;
         }
+
         .horizontal-scroll-container::-webkit-scrollbar-track {
             background: #222;
         }
+
         .horizontal-scroll-container::-webkit-scrollbar-thumb {
             background: var(--victory-gold);
             border-radius: 3px;
         }
 
         .photo-card {
-            flex: 0 0 280px; /* PC width */
-            aspect-ratio: 1/1; /* Force Square */
+            flex: 0 0 280px;
+            /* PC width */
+            aspect-ratio: 1/1;
+            /* Force Square */
             border-radius: 6px;
             overflow: hidden;
             scroll-snap-align: center;
@@ -722,21 +914,26 @@
             background: #000;
             transition: 0.3s;
         }
+
         @media (max-width: 600px) {
             .photo-card {
-                flex: 0 0 220px; /* Mobile width: Smaller to encourage scroll */
+                flex: 0 0 220px;
+                /* Mobile width: Smaller to encourage scroll */
                 scroll-snap-align: center;
             }
         }
+
         .photo-card:hover {
             border-color: var(--victory-gold);
             transform: scale(1.02);
         }
+
         .photo-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .gallery-scroll-hint {
             text-align: right;
             font-size: 0.8rem;
@@ -745,7 +942,12 @@
             margin-bottom: 0.5rem;
             animation: blink 2s infinite;
         }
-        @keyframes blink { 50% { opacity: 0.5; } }
+
+        @keyframes blink {
+            50% {
+                opacity: 0.5;
+            }
+        }
 
         /* System Table Styles */
         .system-table {
@@ -753,16 +955,22 @@
             border-collapse: collapse;
             margin-top: 1rem;
             color: #fff;
-            font-size: 1.1rem; /* Explicit increase */
-            table-layout: fixed; /* Fix cell widths */
+            font-size: 1.1rem;
+            /* Explicit increase */
+            table-layout: fixed;
+            /* Fix cell widths */
         }
-        .system-table th, .system-table td {
+
+        .system-table th,
+        .system-table td {
             border-bottom: 1px solid #555;
             padding: 14px 10px;
             text-align: left;
             vertical-align: top;
-            word-wrap: break-word; /* Prevent long word overflow */
+            word-wrap: break-word;
+            /* Prevent long word overflow */
         }
+
         .system-table th {
             color: var(--victory-gold);
             font-family: 'Audiowide';
@@ -770,18 +978,22 @@
             font-weight: normal;
             letter-spacing: 1px;
         }
+
         .system-table td {
-            color: #fff; /* Ensure text is visible */
+            color: #fff;
+            /* Ensure text is visible */
         }
+
         .system-note {
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             color: #ccc;
             margin-top: 1.5rem;
             border-top: 1px dashed #555;
             padding-top: 1rem;
             line-height: 1.6;
         }
-        
+
         /* FAQ Styles */
         .faq-container {
             margin-top: 2rem;
@@ -789,35 +1001,43 @@
             padding-top: 1.5rem;
             text-align: left;
         }
+
         .faq-title {
             color: var(--victory-gold);
             font-family: 'Audiowide';
             margin-bottom: 1rem;
-            font-size: 1.3rem; /* Increased size */
+            font-size: 1.3rem;
+            /* Increased size */
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .faq-item {
             margin-bottom: 1.5rem;
         }
+
         .faq-q {
             color: #fff;
             font-weight: bold;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem; /* Increased size */
+            font-size: 1.1rem;
+            /* Increased size */
         }
+
         .faq-q::before {
             content: "Q.";
             color: var(--fire-red);
             margin-right: 8px;
             font-family: 'Audiowide';
         }
+
         .faq-a {
             color: #ccc;
             padding-left: 1rem;
             border-left: 2px solid var(--fire-red);
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             line-height: 1.6;
         }
 
@@ -828,32 +1048,38 @@
             margin: 1rem 0;
             text-align: left;
         }
+
         .recommend-list li {
             margin-bottom: 1rem;
-            font-size: 1.1rem; /* Increased size */
+            font-size: 1.1rem;
+            /* Increased size */
             color: #fff;
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 0.5rem;
         }
+
         .recommend-list li:last-child {
             border-bottom: none;
         }
+
         .recommend-list li i {
             color: var(--victory-gold);
             margin-top: 4px;
             font-size: 1.2rem;
             filter: drop-shadow(0 0 3px var(--fighter-orange));
         }
+
         .recommend-message {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px dashed #555;
             font-weight: 500;
             color: #ddd;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
         }
 
         /* =========================================
@@ -863,17 +1089,22 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin: 6rem 0; /* Increased margin */
+            margin: 6rem 0;
+            /* Increased margin */
         }
-        @media (min-width: 900px) { /* PC - Side by Side */
+
+        @media (min-width: 900px) {
+
+            /* PC - Side by Side */
             .split-section-wrapper {
                 grid-template-columns: 1fr 1fr;
                 align-items: start;
             }
         }
+
         /* Reset margin for sections inside the wrapper */
         .split-section-wrapper .text-section {
-            margin: 0; 
+            margin: 0;
             height: 100%;
         }
 
@@ -884,9 +1115,11 @@
             margin-bottom: 1.5rem;
             align-items: flex-start;
         }
+
         .join-step:last-child {
             margin-bottom: 0;
         }
+
         .join-icon-box {
             flex-shrink: 0;
             width: 50px;
@@ -901,15 +1134,18 @@
             color: var(--victory-gold);
             box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
         }
+
         .join-text h4 {
             margin: 0 0 5px 0;
             color: #fff;
             font-family: 'Audiowide';
             font-size: 1.1rem;
         }
+
         .join-text p {
             margin: 0;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             color: #ccc;
             line-height: 1.5;
         }
@@ -920,11 +1156,13 @@
             border-bottom: 1px dashed #444;
             padding-bottom: 1rem;
         }
+
         .rule-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
+
         .rule-head {
             display: block;
             color: var(--fire-red);
@@ -932,20 +1170,24 @@
             margin-bottom: 0.3rem;
             font-size: 1.05rem;
         }
+
         .rule-head i {
             margin-right: 8px;
         }
+
         .rule-body {
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             color: #ddd;
         }
-        
+
         /* ORGANIZER STYLES */
         .organizer-profile {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
+
         .organizer-img-box {
             width: 150px;
             height: 150px;
@@ -955,29 +1197,36 @@
             box-shadow: 0 0 15px var(--fire-red);
             margin: 0 auto;
         }
+
         .organizer-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .organizer-info h4 {
             font-size: 1.4rem;
             color: var(--victory-gold);
             margin: 0 0 5px;
             text-align: center;
         }
+
         .organizer-info .en-name {
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             font-family: 'Audiowide';
             color: #ccc;
         }
+
         .org-role {
             text-align: center;
             color: #aaa;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             margin-bottom: 1.5rem;
             line-height: 1.5;
         }
+
         .org-sub-head {
             color: var(--fire-red);
             font-weight: bold;
@@ -986,20 +1235,24 @@
             border-left: 3px solid var(--victory-gold);
             padding-left: 10px;
         }
-        
+
         @media (min-width: 768px) {
             .organizer-profile {
                 flex-direction: row;
                 align-items: flex-start;
             }
+
             .organizer-img-box {
                 flex: 0 0 150px;
                 margin: 0;
             }
+
             .organizer-info {
                 flex: 1;
             }
-            .organizer-info h4, .org-role {
+
+            .organizer-info h4,
+            .org-role {
                 text-align: left;
             }
         }
@@ -1010,7 +1263,7 @@
             flex-direction: column;
             gap: 1.5rem;
         }
-        
+
         .access-map iframe {
             width: 100%;
             height: 300px;
@@ -1026,25 +1279,76 @@
                 align-items: flex-start;
                 text-align: left;
             }
+
             .access-text {
                 flex: 1;
             }
+
             .access-map {
                 flex: 1;
             }
         }
-        
+
+        /* =========================================
+           ILLUSTRATION 2-COLUMN LAYOUT (ADDED)
+           ========================================= */
+        .section-with-illustration {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .section-text-content {
+            flex: 1;
+            width: 100%;
+        }
+
+        .section-illustration {
+            width: 90%;
+            max-width: 400px;
+            border: 4px solid #222;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+            transform: rotate(2deg);
+            transition: transform 0.3s;
+        }
+
+        .section-illustration:hover {
+            transform: rotate(-2deg) scale(1.05);
+            border-color: var(--victory-gold);
+        }
+
+        @media (min-width: 768px) {
+            .section-with-illustration.right-img {
+                flex-direction: row;
+            }
+
+            .section-with-illustration.left-img {
+                flex-direction: row-reverse;
+            }
+
+            .section-illustration {
+                width: 45%;
+            }
+
+            .section-text-content {
+                width: 55%;
+            }
+        }
+
         /* =========================================
            RELATED SITES (ALLIANCE) STYLES
            ========================================= */
         .related-grid {
             display: flex;
-            justify-content: center; /* Center items mainly for single item or few items */
+            justify-content: center;
+            /* Center items mainly for single item or few items */
             flex-wrap: wrap;
             gap: 2rem;
             margin-top: 1.5rem;
         }
-        
+
         .related-card {
             display: block;
             width: 280px;
@@ -1055,29 +1359,29 @@
             text-decoration: none;
             transition: 0.3s;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
-        
+
         /* Interactive State (for active links) */
         .related-card.active:hover {
             transform: translateY(-5px);
             border-color: var(--victory-gold);
             box-shadow: 0 0 20px var(--fighter-orange);
         }
-        
+
         /* Coming Soon State */
         .related-card.coming-soon {
             cursor: not-allowed;
             border-color: #444;
             opacity: 0.9;
         }
-        
+
         .related-img-box {
             width: 100%;
             height: 160px;
             position: relative;
         }
-        
+
         .related-img {
             width: 100%;
             height: 100%;
@@ -1085,6 +1389,7 @@
             /* Desaturate the image slightly if coming soon */
             filter: brightness(0.8) contrast(1.1);
         }
+
         .related-card.coming-soon .related-img {
             filter: grayscale(80%) brightness(0.6);
         }
@@ -1095,7 +1400,7 @@
             background: linear-gradient(180deg, #222, #111);
             text-align: center;
         }
-        
+
         .related-name {
             color: var(--victory-gold);
             font-family: 'Audiowide', sans-serif;
@@ -1103,18 +1408,18 @@
             margin: 0;
             letter-spacing: 1px;
         }
-        
+
         /* Overlay Mask for Coming Soon */
         .cs-mask {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 2;
         }
-        
+
         .cs-stamp {
             color: #aaa;
             font-family: 'Audiowide', sans-serif;
@@ -1127,7 +1432,7 @@
             background: rgba(0, 0, 0, 0.5);
             white-space: nowrap;
         }
-        
+
         /* =========================================
            OPERATING COMPANY STYLES
            ========================================= */
@@ -1141,14 +1446,14 @@
         .company-logo-box {
             width: 100%;
             max-width: 300px;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             border: 2px solid var(--victory-gold);
             border-radius: 8px;
             padding: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 10px rgba(255,204,0,0.3);
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
             /* Aspect Ratio: 4:3 (Landscape-ish) to 1:1 */
             aspect-ratio: 4 / 3;
         }
@@ -1164,37 +1469,45 @@
             width: 100%;
             text-align: left;
         }
-        
+
         /* NEW: Dedicated table styles for Company to ensure readability */
         .company-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 1rem;
-            font-size: 1.1rem; /* Large enough */
+            font-size: 1.1rem;
+            /* Large enough */
         }
-        .company-table th, .company-table td {
+
+        .company-table th,
+        .company-table td {
             padding: 10px 5px;
             border-bottom: 1px solid #444;
             text-align: left;
             vertical-align: top;
             line-height: 1.5;
         }
+
         .company-table th {
             color: var(--victory-gold);
             width: 25%;
             font-weight: normal;
             white-space: nowrap;
         }
+
         .company-table td {
             color: #fff;
-            font-weight: 700; /* Bold for readability */
+            font-weight: 700;
+            /* Bold for readability */
         }
-        
+
         .company-desc {
             margin-top: 1rem;
-            color: #eee; /* Brighter than #ccc */
+            color: #eee;
+            /* Brighter than #ccc */
             line-height: 1.8;
-            font-size: 1rem; /* Validated */
+            font-size: 1rem;
+            /* Validated */
             border-top: 1px dashed #555;
             padding-top: 1rem;
         }
@@ -1204,14 +1517,16 @@
                 flex-direction: row;
                 align-items: flex-start;
             }
+
             .company-logo-box {
                 flex: 0 0 250px;
             }
+
             .company-info {
                 flex: 1;
             }
         }
-        
+
         /* Mobile Optimization for Company Table */
         @media (max-width: 600px) {
             .company-table th {
@@ -1219,23 +1534,26 @@
                 width: 100%;
                 border-bottom: none;
                 padding-bottom: 0;
-                font-size: 1rem; /* Validated */
+                font-size: 1rem;
+                /* Validated */
                 opacity: 0.9;
             }
+
             .company-table td {
                 display: block;
                 padding-top: 2px;
                 padding-left: 0;
             }
-            
+
             /* Prevent banner text from overlapping or breaking weirdly on small screens */
-            .schedule-main { 
+            .schedule-main {
                 /* Removed clamp to avoid confusion, let it scale naturally or wrap */
-                font-size: 2rem; 
+                font-size: 2rem;
             }
+
             /* Force sub text to stay on one line and scale down if needed */
-            .schedule-sub { 
-                white-space: normal; 
+            .schedule-sub {
+                white-space: normal;
                 font-size: 1.8rem;
             }
         }
@@ -1263,23 +1581,34 @@
             font-size: 1rem;
             white-space: nowrap;
         }
+
         .fab-btn:hover {
             transform: scale(1.05);
             background: #fff;
         }
+
         .fab-btn i {
             font-size: 1.4rem;
         }
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(230, 0, 18, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(230, 0, 18, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(230, 0, 18, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(230, 0, 18, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(230, 0, 18, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(230, 0, 18, 0);
+            }
         }
 
         .modal {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 999;
             display: flex;
             align-items: center;
@@ -1289,11 +1618,12 @@
             padding: 1rem;
             transition: opacity 0.3s, visibility 0.3s;
         }
+
         .modal.active {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .modal-win {
             background: linear-gradient(135deg, #222, #000);
             border: 2px solid var(--victory-gold);
@@ -1317,9 +1647,20 @@
         }
 
         @keyframes tvOn {
-            0% { transform: scaleX(0.01) scaleY(0); opacity: 1; }
-            50% { transform: scaleX(1) scaleY(0.01); opacity: 1; }
-            100% { transform: scaleX(1) scaleY(1); opacity: 1; }
+            0% {
+                transform: scaleX(0.01) scaleY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(0.01);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleX(1) scaleY(1);
+                opacity: 1;
+            }
         }
 
         .modal-img {
@@ -1333,17 +1674,33 @@
         }
 
         @media (max-width: 600px) {
-            .container { padding: 1.5rem 1rem; }
-            h1 { font-size: 2.2rem; }
-            .modal-win { padding: 15px; width: 95%; }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .modal-win {
+                padding: 15px;
+                width: 95%;
+            }
+
             .gallery-grid {
                 /* スマホでは1個ずつ縦積みにする */
                 grid-template-columns: 1fr;
             }
+
             /* Banner Font Adjustment for Mobile */
-            .banner-title { font-size: 1.1rem; }
-            .banner-sub { font-size: 1rem; }
-            
+            .banner-title {
+                font-size: 1.1rem;
+            }
+
+            .banner-sub {
+                font-size: 1rem;
+            }
+
             .fab-btn {
                 bottom: 15px;
                 right: 15px;
@@ -1351,46 +1708,54 @@
                 font-size: 0.95rem;
             }
         }
-        
+
         /* =========================================
            MOBILE OPTIMIZATION (ADDED)
            ========================================= */
         @media (max-width: 768px) {
+
             /* 1. Container Spacing */
             .container {
-                padding: 2rem 15px; /* Reduce side padding */
+                padding: 2rem 15px;
+                /* Reduce side padding */
                 width: auto;
                 margin: 0 10px;
             }
-            
+
             /* 2. Headings */
             h1 {
                 font-size: 2rem;
             }
-            .text-section h3, h2 {
+
+            .text-section h3,
+            h2 {
                 font-size: 1.2rem !important;
                 word-break: keep-all;
                 overflow-wrap: normal;
                 line-height: 1.4;
+                text-align: left;
             }
-            
+
             /* 3. Section Spacing */
             .text-section {
-                margin: 4rem 0; /* Maintain spacing */
+                margin: 4rem 0;
+                /* Maintain spacing */
             }
-            
+
             /* Split Section Wrapper (Join & Rules) */
             .split-section-wrapper {
                 display: flex;
                 flex-direction: column;
-                gap: 60px; /* Ensure spacing between JOIN and RULES */
+                gap: 60px;
+                /* Ensure spacing between JOIN and RULES */
             }
-            
+
             /* 4. Timetable Layout: 2 Columns [Line | Content] where Content has Time stacked on Text */
             .timeline-item {
                 grid-template-columns: 30px 1fr;
                 gap: 15px;
             }
+
             .timeline-time {
                 /* Move to right column, top row */
                 grid-column: 2;
@@ -1400,52 +1765,63 @@
                 margin-bottom: 5px;
                 font-size: 1rem;
             }
+
             .timeline-line-area {
                 /* Move to left column, span full height */
                 grid-column: 1;
                 grid-row: 1 / 3;
             }
+
             .timeline-content {
                 /* Move to right column, bottom row */
                 grid-column: 2;
                 grid-row: 2;
-                padding-bottom: 30px; /* Spacing between items */
+                padding-bottom: 30px;
+                /* Spacing between items */
             }
+
             .timeline-dot {
-                top: 6px; /* Align with the Time text */
+                top: 6px;
+                /* Align with the Time text */
             }
-            
+
             /* 5. System Table Optimization */
-            .system-table th, .system-table td {
+            .system-table th,
+            .system-table td {
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
             }
+
             .system-table th {
                 border-bottom: none;
                 padding-bottom: 5px;
                 color: var(--victory-gold);
                 font-size: 1rem;
             }
+
             .system-table td {
                 padding-top: 0;
-                padding-left: 15px; /* Indent slightly */
+                padding-left: 15px;
+                /* Indent slightly */
                 border-bottom: 1px solid #444;
                 margin-bottom: 15px;
             }
+
             .system-table tr:last-child td {
                 border-bottom: none;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <img src="./image/takana.png" class="takana-icon" alt="Team Logo">
             <h1 id="user-name"></h1>
             <div id="user-role" class="role-badge"></div>
-            
+
             <!-- NEW: Campaign Info (Updated to be LARGER & New Design) -->
             <div class="campaign-banner scroll-reveal zoom-in">
                 <div class="campaign-en">// FIRST TIME FREE //</div>
@@ -1454,40 +1830,45 @@
                 </div>
             </div>
 
-            <p id="user-bio" style="margin: 1.5rem 0; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px #000; font-size: 1.1rem;"></p>
+            <p id="user-bio"
+                style="margin: 1.5rem 0; line-height: 1.6; font-weight: 500; text-shadow: 1px 1px 2px #000; font-size: 1.1rem;">
+            </p>
         </header>
-        
-        <!-- Updated: Link to X (Twitter) -->
-        <a href="https://www.instagram.com/takana_sumabura?igsh=MWU1bXBvbXh1Y3UxOA==" target="_blank" class="challenger-banner scroll-reveal zoom-in">
-            <span class="banner-title">最新の開催情報は<br class="sp-br">公式Instagramをチェック ▷</span>
-            <span class="banner-sub">@takana_sumabura</span>
-        </a>
-        <span class="banner-note">※ 初心者・お一人様もスタッフがアテンドするのでご安心ください！</span>
-        
-        <!-- PLAYER SPIRIT (Moved before BATTLE MODE) -->
-        <div id="free-text-area" style="position: relative;"></div>
-        
-        <!-- TARGET PLAYER (Inserted by JS here) -->
-        
-        <!-- SCHEDULE (Inserted by JS here) -->
 
-        <!-- BATTLE MODE Container -->
+        <!-- 1. HEADER -> Activities -> Target -> Schedule -> THEN Instagram Banner
+        
+        ==========================================
+             NEW ORDER OF SECTIONS FOR NEWCOMERS
+             ========================================== -->
+
+        <!-- 2. ACTIVITIES & RECOMMEND (Inserted by JS here) -->
+        <!-- We use the existing gallery-grid as the anchor for the top content -->
         <div id="battle-area">
-            <!-- Changed h2 style for retro theme with scroll reveal -->
-            <h2 style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red); font-size: 1.8rem;">// バトルモード</h2>
+            <h2
+                style="font-family: 'Audiowide'; color: var(--victory-gold); letter-spacing: 2px; text-shadow: 2px 2px 0 var(--fire-red); font-size: 1.8rem;">
+                // 活動内容 (ACTIVITIES)</h2>
             <div id="gallery-grid" class="gallery-grid"></div>
         </div>
-        
-        <!-- TIME TABLE (Inserted by JS here) -->
-        <!-- JOIN & RULES (Inserted by JS here) -->
+
+        <!-- 3. PHOTO GALLERY (Inserted by JS here) -->
+
+        <!-- 4. SCHEDULE (Inserted by JS here) -->
+
+        <!-- 5. SYSTEM & JOIN & RULES (Inserted by JS here) -->
+
+        <!-- 6. TIME TABLE (Inserted by JS here) -->
+
+        <!-- 7. VOICES (Inserted by JS here) -->
+
+        <!-- 8. ACCESS & ORGANIZER (Inserted by JS here) -->
         <!-- SYSTEM & MENU (Inserted by JS here) -->
         <!-- STAGE INFO (Inserted by JS here) -->
         <!-- RELATED SITES (Inserted by JS here) -->
         <!-- ORGANIZER (Inserted by JS here) -->
         <!-- OPERATING COMPANY (Inserted by JS here) -->
 
-        <div style="margin-top: 4rem; position: relative;">
-            <div id="links-list"></div>
+        <div style="margin-top: 4rem; position: relative;" id="footer-area">
+
             <p style="margin-top: 2rem; font-size: 1rem; font-family: 'Audiowide'; opacity: 0.8;">
                 COPYRIGHT © <span id="year"></span> <span id="footer-name"></span>.
             </p>
@@ -1496,15 +1877,18 @@
 
     <!-- Floating Action Button -->
     <a href="https://lin.ee/8lS5tbI" target="_blank" class="fab-btn">
-        <i class="fa-brands fa-line"></i> LINEでエントリー / お問い合わせ
+        <i class="fa-brands fa-line"></i> 初回無料！LINEで参加
     </a>
 
     <div id="modal" class="modal" onclick="closeModal()">
         <div class="modal-win" id="modal-win" onclick="event.stopPropagation()">
-            <h2 id="modal-title" style="font-family:'Audiowide'; margin-top:0; color:var(--victory-gold); font-size: 1.4rem; margin-bottom: 1rem; text-shadow: 1px 1px 0 #000;"></h2>
+            <h2 id="modal-title"
+                style="font-family:'Audiowide'; margin-top:0; color:var(--victory-gold); font-size: 1.4rem; margin-bottom: 1rem; text-shadow: 1px 1px 0 #000;">
+            </h2>
             <img id="modal-img" class="modal-img" src="" alt="Work Detail">
             <p id="modal-cat" style="font-family:'Audiowide'; color:#ccc; font-size: 1rem; margin-top: 1rem;"></p>
-            <button onclick="closeModal()" class="y2k-btn" style="cursor:pointer; width:auto; margin:1rem auto 0; font-size: 1rem; padding: 10px 30px;">CLOSE</button>
+            <button onclick="closeModal()" class="y2k-btn"
+                style="cursor:pointer; width:auto; margin:1rem auto 0; font-size: 1rem; padding: 10px 30px;">CLOSE</button>
         </div>
     </div>
 
@@ -1512,18 +1896,11 @@
         const config = {
             name: "スマブラ部",
             role: "N64スタイル・交流重視",
-            bio: "集え、かつての子供たちよ。<br><strong style='color:var(--victory-gold)'>1999年の熱狂</strong>が､今ふたたび幕を開ける｡<br><span style='font-size:1rem; color:#ccc; font-weight:normal; display:block; margin-top:0.5rem;'>※お一人様・初心者・お子様連れ、大歓迎！</span>",
-            
-            freeArea: {
-                title: "// プレイヤースピリット",
-                content: `
-                    <h4 style="margin:0 0 15px 0; color:var(--victory-gold); font-size:1.2rem; border-left:3px solid var(--victory-gold); padding-left:10px;">強さは関係ない、楽しんだもん勝ち。</h4>
-                    <p>「スマブラ部」は、ガチ勢だけが集まる場所ではありません。むしろ、<span class="highlight">「20年ぶりにコントローラーを握る」</span>という復帰勢が大半です。</p>
-                    <p>操作方法を忘れていても大丈夫。スタッフや周りのメンバーが優しく教えます。ここにあるのは、勝ち負けよりも「あの頃の放課後の空気感」。</p>
-                    <p>観戦するもよし、ひたすら乱闘に興じるもよし。<br>
-                    ここは、大人が童心に帰れる<span class="highlight">「最高の部室」</span>です。</p>
-                `
-            },
+            bio: "集え、かつての子供たちよ。<br><strong style='color:var(--victory-gold)'>1999年の熱狂</strong>が､今ふたたび幕を開ける｡<br><span style='font-size:1rem; color:#ccc; font-weight:normal; display:block; margin-top:0.5rem;'>※お一人様・初心者・ブランク勢、大歓迎！</span>",
+
+            // Removed freeArea (Player Spirit) as it overlaps with other sections
+
+
 
             // おすすめ情報（ターゲット）
             recommend: {
@@ -1536,7 +1913,7 @@
                 ],
                 message: `ここは単なるゲーム対戦会場ではありません。<br>共通の思い出を持つ大人たちが集まる<span class="highlight">「サードプレイス（第3の居場所）」</span>です。`
             },
-            
+
             // スケジュール設定
             schedule: {
                 title: "// 次回の対戦日",
@@ -1547,9 +1924,12 @@
                 dates: [
                     "2026/02/21",
                     "2026/02/28",
+                    "2026/03/07",
+                    "2026/03/21",
+                    "2026/03/28"
                 ]
             },
-            
+
             // 活動写真ギャラリー（NEW）
             // 画像URLをここに追加してください
             photoGallery: {
@@ -1567,17 +1947,17 @@
                     "event_29.png"
                 ]
             },
-            
+
             // 参加フロー
             join: {
                 title: "// 参加の流れ",
                 steps: [
-                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Instagramで「開催日」をチェック。<br>※毎週土曜は定期開催。日曜は不定期開催です。" },
-                    { title: "ENTRY", icon: "fa-solid fa-door-open", desc: "「予約なし」の飛び込み参加も大歓迎！<br>確実に席を確保したい場合はLINEからご連絡ください。" },
+                    { title: "SCHEDULE", icon: "fa-regular fa-calendar-check", desc: "まずは公式Instagram等で「開催日」をチェック。<br>※毎週土曜は定期開催。日曜は不定期開催です。" },
+                    { title: "ENTRY", icon: "fa-solid fa-door-open", desc: "「予約なし」の飛び込み参加も大歓迎です！<br><span style='color:var(--victory-gold); font-weight:bold;'>ただ、初めてで不安な方は、事前にLINEで『今日行きます』と一言いただければ、スタッフが入口でアテンドし、レベルに合ったグループへスムーズにご案内します！</span>" },
                     { title: "PAY & PLAY", icon: "fa-solid fa-beer-mug-empty", desc: "受付で参加費￥1,000を支払い、入場したらそこはもう部室です。思う存分楽しみましょう。" }
                 ]
             },
-            
+
             // タイムテーブル (UPDATED)
             timetable: {
                 title: "// タイムテーブル",
@@ -1604,35 +1984,45 @@
             system: {
                 title: "// システム・メニュー",
                 content: `
-                    <table class="system-table">
-                        <tr>
-                            <th>ENTRY</th>
-                            <td>
-                                ¥1,000(1ドリンク付)<br>
-                                <span style="color:var(--victory-gold); font-weight:bold; background:var(--fire-red); padding:2px 8px; font-size:1rem; display:inline-block; margin-top:5px; transform:skew(-10deg);">※ 初回参加費 無料！</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>DRINK PLAN<br><span style="font-size:0.8rem; font-weight:normal;">(Self Style)</span></th>
-                            <td>
-                                セルフ飲み放題 (アルコール)：¥1,500 <span style="font-size:0.9rem; color:#bbb;">※ビールなし</span><br>
-                                セルフ飲み放題 (ソフトD)：¥700<br>
-                                <span style="font-size:0.9rem; color:#bbb;">※単品各種あり</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>FOOD MENU</th>
-                            <td>
-                                吉田の肉うどん：¥650〜<br>
-                                二郎系肉うどん：¥850〜<br>
-                                あげぽよチキン：¥380<br>
-                                あげぽよポテト：¥280<br>
-                                日替わり惣菜：¥280均一<br>
-                                日替わり一品料理：¥380均一
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="system-note">
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                        <div style="flex: 1 1 280px; max-width: 400px;">
+                            <table class="system-table" style="margin-bottom: 0;">
+                                <tr>
+                                    <th>ENTRY</th>
+                                    <td>
+                                        ¥1,000(1ドリンク付)<br>
+                                        <span style="color:var(--victory-gold); font-weight:bold; background:var(--fire-red); padding:2px 8px; font-size:0.9rem; display:inline-block; margin-top:5px; transform:skew(-10deg);">※ 初回参加費 無料！</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>DRINK PLAN<br><span style="font-size:0.8rem; font-weight:normal;">(Self Style)</span></th>
+                                    <td>
+                                        セルフ飲み放題 (アルコール)：¥1,500 <span style="font-size:0.8rem; color:#bbb;">※ビールなし</span><br>
+                                        セルフ飲み放題 (ソフトD)：¥700<br>
+                                        <span style="font-size:0.8rem; color:#bbb;">※単品各種あり</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div style="flex: 1 1 280px; max-width: 400px; position: relative;">
+                            <div style="background: linear-gradient(135deg, #2a0a0a, #111); border: 2px solid var(--fire-red); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(200, 50, 50, 0.2); height: 100%; box-sizing: border-box;">
+                                <img src="./image/chiken.png" alt="Food Menu" style="position: absolute; top: -15px; right: -10px; width: 70px; height: 70px; object-fit: cover; border-radius: 50%; border: 3px solid var(--victory-gold); box-shadow: 0 4px 10px rgba(0,0,0,0.5); transform: rotate(15deg);">
+                                <h4 style="color: var(--victory-gold); margin-top: 0; margin-bottom: 12px; border-bottom: 2px dashed rgba(255,255,255,0.2); padding-bottom: 8px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.2rem; padding-right: 65px; text-align: left;">
+                                    <i class="fa-solid fa-utensils"></i> 部室の絶品メシ (FOOD)
+                                </h4>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem; line-height: 1.6; color: #ddd; text-align: left;">
+                                    <li><span style="color:#fff; font-weight:bold;">吉田の肉うどん：</span>¥650〜</li>
+                                    <li><span style="color:#fff; font-weight:bold;">二郎系肉うどん：</span>¥850〜</li>
+                                    <li><span style="color:#fff; font-weight:bold;">あげぽよチキン：</span>¥380</li>
+                                    <li><span style="color:#fff; font-weight:bold;">あげぽよポテト：</span>¥280</li>
+                                    <li><span style="color:#fff; font-weight:bold;">日替わり一品惣菜：</span>各¥280/¥380</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="system-note" style="margin-top: 2rem;">
                         <i class="fa-solid fa-check" style="color:var(--victory-gold);"></i> 手ぶら参加OK（コントローラー貸出あり）<br>
                         <i class="fa-solid fa-check" style="color:var(--victory-gold);"></i> 見学のみの参加も大歓迎です！
                     </div>
@@ -1660,37 +2050,39 @@
                     ・甲府南ICから約20分<br>
                     ・甲府昭和ICから約15分
                 `,
+                img: "./image/event_24.jpg",
                 map: `<iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%94%B2%E5%BA%9C%E5%B8%82%E9%9D%92%E6%B2%BC3%E4%B8%81%E7%9B%AE5-44&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
             },
-            
+
             // 関連コミュニティ
             related: {
-                title: "// 関連コミュニティ",
                 list: [
-                    { 
-                        name: "将棋部", 
-                        img: "https://images.unsplash.com/photo-1616790876844-97c0c6057364?q=80&w=800&auto=format&fit=crop", 
-                        url: "#", 
-                        status: "coming_soon" 
+                    {
+                        name: "将棋部",
+                        img: "https://images.unsplash.com/photo-1616790876844-97c0c6057364?q=80&w=800&auto=format&fit=crop",
+                        url: "#",
+                        status: "coming_soon"
                     }
                 ]
             },
-            
+
             // 主催者 (UPDATED)
             organizer: {
                 title: "// 主催者プロフィール",
                 name: "桑原 淳",
                 enName: "Jun Kuwabara",
                 role: "株式会社高菜先生ソーシャルエンタープライズ 代表取締役<br>超超エリート株式会社 代表",
+                heroSub: "山梨・甲府 64スマブラ交流会",
+                heroText: "あの頃の放課後が、山梨に蘇る。<br>大人も夢中になれるスマブラ交流会！<br><br>1999年の熱狂をそのままに、ニンテンドー64実機でスマブラを遊び尽くす「スマブラ部」。<br><br>仕事帰りや休日に、ゲームを通じて利害関係のない仲間と笑い合える。<br>そんな大人が童心に帰れる<br>最高の部室（サードプレイス）です。",
+                heroBtn: "イベント詳細を見る",
                 history: "富士吉田市出身。東京青山で美容師として勤務後、25歳で「旅人美容師」としてハサミ一本で世界一周1000人ヘアカットの旅へ。<br>帰国後、書籍『世界を知るために旅に出たら 日本を知る旅だった』を出版。<br>東京・高円寺に美容室「UpToYou」を設立後、現在は観光・飲食・社会貢献事業を展開する「株式会社高菜先生ソーシャルエンタープライズ」等の代表を務める。",
                 message: "中学・高校時代をスマブラに捧げた男。<br>専門学校時代には、当時の東京大会チャンピオンに圧勝した経験を持つ隠れた実力者。<br>「かつての熱狂を、もう一度作りたい」という想いで当部を発足。",
-                img: "./image/junkuwabara.jpg" 
+                img: "./image/junkuwabara.jpg"
             },
-            
+
             // 運営会社情報
             company: {
-                title: "// 運営会社",
-                logo: "./image/takanasocial.png", 
+                logo: "./image/takanasocial.png",
                 name: "株式会社高菜先生ソーシャルエンタープライズ",
                 rep: "桑原 淳",
                 address: "東京都中央区銀座1-22-11 銀座大竹ビジデンス2階",
@@ -1698,15 +2090,44 @@
             },
 
             works: [
-                { file: "event_14.jpg", title: "4人乱闘（エンジョイ）", category: "まずはここから。勝敗よりも笑い重視の4人対戦。復帰勢も初心者も、とりあえずコントローラーを握れば盛り上がれます。" },
-                { file: "image3.jpg", title: "1on1（真剣勝負）",  category: "アイテムなし、3ストック。運要素を排除したヒリつく対戦。かつてのライバルたちと、実力をぶつけ合う熱い時間。" },
-                { file: "chiken.png", title: "部室メシ & 乾杯", category: "名物「吉田の肉うどん」や「あげぽよチキン」で腹ごしらえ。セルフ飲み放題を片手に語り合えば、そこはもう「第3の居場所」です。" },
-                { file: "image4.jpg", title: "MVP発表 & 談笑タイム", category: "その日のNo.1プレイヤー「MVP」を選出。最後は勝ち負け関係なく、今日のナイスプレーを肴に盛り上がる時間です。" },
+                { file: "event_5.jpg", title: "対戦（自由対戦）", category: "経験者同士の熱い1on1から、笑いありの4人乱闘まで。自分のペースで自由に楽しみたい人向け。勝敗にこだわらず、あの頃のようにワイワイ盛り上がりましょう！" },
+                { file: "event_11.jpg", title: "上達直結！<br class='sp-br'>練習＆レクチャー枠", category: "「教わる」というより「一緒に遊びながら強くなる」環境です。<br>『ここをこうすればもっと動ける！』『あの技の対策はコレ』など、プレイ中の直接フィードバックが飛び交うため、初心者や復帰勢でもその日のうちにワンランク上の動きができるようになります。" },
+                { file: "event_20.jpg", title: "白熱のトーナメント＆ボス戦", category: "毎回必ず「全員参加のトーナメント」を開催！<br>優勝者にはささやかな景品＆部長（代表）との1on1特別挑戦権を贈呈。見事部長に勝利できれば、なんと【次回参加費無料券】をプレゼント！毎回の明確な目標になります。" },
+                { file: "junkuwabara.jpg", title: "部長｜桑原 淳", category: "実は専門学校時代、当時の東京大会チャンピオンに圧勝した経験を持つ隠れた猛者。<br>「かつての熱狂を、もう一度作りたい」という想いで当部を発足。<br>そんな部長が自ら気さくにレクチャー・アテンドするため、誰から教わるのか明確で、安心かつ超贅沢な環境です！" },
             ],
 
             links: [
                 { label: "LINEで問い合わせ", url: "https://lin.ee/8lS5tbI" }
-            ]
+            ],
+
+            // よくある質問 (FAQ)
+            faq: {
+                title: "// よくある質問",
+                items: [
+                    { q: "全くの初心者ですが浮きませんか？", a: "大歓迎です！「20年ぶりにやる」という復帰勢が大半ですし、コーチ付きの練習会グループもあるのでご安心ください。" },
+                    { q: "コントローラー等の持ち物は必要ですか？", a: "不要です！実機とコントローラーはこちらで多数用意しておりますので、手ぶらでお越しください。" },
+                    { q: "一人での参加者はどれくらいいますか？", a: "ほとんどの方がお一人でのご参加です。初参加の方でも、スタッフがレベルに合ったグループへアテンドしますのでポツンとなることはありません。" },
+                    { q: "遅れて参加（早退）しても大丈夫ですか？", a: "問題ありません。ご都合の良い時間帯にフラッと来て、満足したらサッと帰れるような、ゆるい雰囲気の部室です。" }
+                ]
+            },
+
+            // 参加者の声 (VOICES)
+            voices: {
+                title: "// 参加者の声",
+                items: [
+                    { "name": "40代 男性", "text": "「一人で参加したので最初は不安でしたが、代表の方にすぐエンジョイ台に案内してもらえました！20年ぶりで操作も忘れていましたが、みんなワイワイ教えてくれて、その日のうちに馴染めました。」", "icon": "fa-solid fa-user" },
+                    { "name": "20代後半 男性", "text": "「仕事終わりにふらっと寄れるのが最高です。ただのゲームオフ会というより、利害関係のない大人の秘密基地みたいな感じで、ここで飲むお酒と絶品うどんが週末の楽しみになりました。」", "icon": "fa-solid fa-user-astronaut" },
+                    { "name": "30代 男性", "text": "「ミニトーナメントの適度な緊張感がたまりません。代表に挑戦して無料チケットを狙うために、毎回少しずつ練習会でコンボを教わっています(笑)」", "icon": "fa-solid fa-user-ninja" }
+                ]
+            },
+
+            // クロージングメッセージ (CLOSING)
+            closing: {
+                title: "// さあ、あの頃の放課後へ！",
+                message: "一人でのご参加も、初心者・ブランク勢も大歓迎！<br>まずは「初回無料」で、この最高の部室を体験しに来てください。<br><br><span style='font-size: 1.1em; color: var(--victory-gold); font-weight: bold;'>準備はいいですか？</span>",
+                btnText: "【初回無料】参加日程を確認 ▷",
+                btnUrl: "https://lin.ee/8lS5tbI"
+            }
         };
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1716,66 +2137,87 @@
             document.getElementById('user-bio').innerHTML = config.bio;
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // 1. PLAYER SPIRIT (free-text-area)
-            const freeAreaEl = document.getElementById('free-text-area');
-            if (config.freeArea && config.freeArea.title && config.freeArea.content) {
-                const section = document.createElement('div');
-                section.className = 'text-section';
-                section.innerHTML = `
-                    <h3 class="scroll-reveal from-left">${config.freeArea.title}</h3>
-                    <div class="scroll-reveal from-bottom">
-                       <p>${config.freeArea.content}</p>
-                    </div>
-                `;
-                freeAreaEl.appendChild(section);
-            }
+            // ==========================================
+            // NEW RENDERING ORDER (UX Redesign)
+            // ==========================================
 
-            // 2. TARGET PLAYER (Insert AFTER Spirit)
-            let lastElement = freeAreaEl; // Pointer for next insertion
-            
+            // Anchor 1: battle-area (Activities)
+            const battleArea = document.getElementById('battle-area');
+            let lastElement = battleArea;
+
+            // 1. TARGET PLAYER (Insert AFTER Activities)
             if (config.recommend && config.recommend.title && config.recommend.list) {
                 const section = document.createElement('div');
                 section.className = 'text-section recommend-mode';
                 let listHtml = '<ul class="recommend-list">';
                 config.recommend.list.forEach((item, index) => {
-                    // Staggered delay for list items
                     listHtml += `<li class="scroll-reveal from-bottom" style="transition-delay: ${index * 0.1}s"><i class="${item.icon}"></i> ${item.text}</li>`;
                 });
                 listHtml += '</ul>';
-                
+
                 if (config.recommend.message) {
                     listHtml += `<p class="recommend-message scroll-reveal from-bottom" style="transition-delay: 0.4s">${config.recommend.message}</p>`;
                 }
 
                 section.innerHTML = `
                     <h3 class="scroll-reveal from-left">${config.recommend.title}</h3>
-                    ${listHtml}
+                    <div class="section-with-illustration right-img">
+                        <div class="section-text-content">
+                            ${listHtml}
+                        </div>
+                        <img src="./image/cat_hang.png" class="section-illustration scroll-reveal zoom-in" alt="Illustration">
+                    </div>
                 `;
-                freeAreaEl.after(section);
-                lastElement = section; // Update pointer
+                lastElement.after(section);
+                lastElement = section;
             }
-            
-            // 2.5 SCHEDULE (Insert AFTER Target Player, BEFORE Battle Mode)
+
+            // 2. PHOTO GALLERY (Insert AFTER Target Player)
+            if (config.photoGallery && config.photoGallery.images && config.photoGallery.images.length > 0) {
+                const section = document.createElement('div');
+                section.className = 'text-section photo-gallery-mode';
+
+                let imagesHtml = '';
+                config.photoGallery.images.forEach((imgUrl, index) => {
+                    imagesHtml += `
+                        <div class="photo-card">
+                           <img src="./image/${imgUrl}" alt="Activity Photo ${index + 1}" loading="lazy">
+                        </div>
+                    `;
+                });
+
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left">${config.photoGallery.title}</h3>
+                    <div class="gallery-scroll-hint">SCROLL ▷</div>
+                    <div class="photo-gallery-wrapper scroll-reveal zoom-in">
+                        <div class="horizontal-scroll-container">
+                            ${imagesHtml}
+                        </div>
+                    </div>
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+
+            // 3. SCHEDULE (Insert AFTER Photo Gallery)
             if (config.schedule && config.schedule.dates) {
                 const section = document.createElement('div');
                 section.className = 'text-section schedule-mode';
-                
-                // Get today's date with time cleared for accurate comparison
+
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
-                
-                // Filter and sort manually specified dates
+
                 const upcomingDates = config.schedule.dates
                     .map(dStr => new Date(dStr))
-                    .filter(d => !isNaN(d) && d >= today) // Valid dates from today onwards
+                    .filter(d => !isNaN(d) && d >= today)
                     .sort((a, b) => a - b)
-                    .slice(0, 6); // Max 6 items
-                
+                    .slice(0, 6);
+
                 let cardsHtml = '<div class="schedule-grid">';
                 const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
                 const dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
                 const dayClasses = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
-                
+
                 if (upcomingDates.length > 0) {
                     upcomingDates.forEach((date, index) => {
                         const mName = monthNames[date.getMonth()];
@@ -1783,7 +2225,7 @@
                         const dayIndex = date.getDay();
                         const dayStr = dayNames[dayIndex];
                         const dayClass = dayClasses[dayIndex];
-                        
+
                         cardsHtml += `
                             <div class="schedule-card scroll-reveal zoom-in" style="transition-delay: ${index * 0.1}s">
                                 <div class="sc-month">${mName}</div>
@@ -1793,7 +2235,6 @@
                         `;
                     });
                 } else {
-                    // Fallback if no dates
                     cardsHtml += `<div style="width:100%; text-align:center; padding:20px; color:#bbb;">現在調整中です...</div>`;
                 }
                 cardsHtml += '</div>';
@@ -1812,78 +2253,76 @@
                 `;
                 lastElement.after(section);
                 lastElement = section;
+
+                // 3.5 Insert Instagram Banner AFTER Schedule
+                const instaSection = document.createElement('div');
+                instaSection.innerHTML = `
+                    <a href="https://www.instagram.com/takana_sumabura?igsh=MWU1bXBvbXh1Y3UxOA==" target="_blank"
+                        class="challenger-banner scroll-reveal zoom-in" style="margin-top: 2rem;">
+                        <span class="banner-title">最新の開催情報は<br class="sp-br">公式Instagramをチェック ▷</span>
+                        <span class="banner-sub">@takana_sumabura</span>
+                    </a>
+                    <span class="banner-note">※ 初心者・お一人様も安心です！</span>
+                `;
+                lastElement.after(instaSection);
+                lastElement = instaSection;
             }
 
-            // 3. BATTLE MODE is already statically placed after free-text-area
-            // We use this as an anchor for subsequent insertions
-            const battleArea = document.getElementById('battle-area');
-            lastElement = battleArea; // Reset pointer to Battle Area for next sections
-            
-            // 3.5 PHOTO GALLERY (Insert AFTER Battle Mode)
-            if (config.photoGallery && config.photoGallery.images && config.photoGallery.images.length > 0) {
+            // 4. SYSTEM & MENU (Insert AFTER Schedule - prioritize price over rules)
+            if (config.system && config.system.title && config.system.content) {
                 const section = document.createElement('div');
-                section.className = 'text-section photo-gallery-mode';
-                
-                let imagesHtml = '';
-                config.photoGallery.images.forEach((imgUrl, index) => {
-                    imagesHtml += `
-                        <div class="photo-card">
-                           <img src="./image/${imgUrl}" alt="Activity Photo ${index+1}" loading="lazy">
-                        </div>
-                    `;
-                });
-                
+                section.className = 'text-section system-mode';
                 section.innerHTML = `
-                    <h3 class="scroll-reveal from-left">${config.photoGallery.title}</h3>
-                    <div class="gallery-scroll-hint">SCROLL ▷</div>
-                    <div class="photo-gallery-wrapper scroll-reveal zoom-in">
-                        <div class="horizontal-scroll-container">
-                            ${imagesHtml}
+                    <h3 class="scroll-reveal from-left">${config.system.title}</h3>
+                    <div class="section-with-illustration left-img">
+                        <div class="section-text-content scroll-reveal from-bottom">
+                            ${config.system.content}
                         </div>
+                        <img src="./image/cat_new_5.png" class="section-illustration scroll-reveal zoom-in" style="transform: rotate(-2deg);" alt="Illustration">
                     </div>
                 `;
                 lastElement.after(section);
                 lastElement = section;
             }
 
-            // 4. TIME TABLE (Insert AFTER Battle Mode) [NEW]
-            if (config.timetable && config.timetable.events) {
+            // 4.5 FAQ (Insert AFTER System, BEFORE Join)
+            if (config.faq && config.faq.items && config.faq.items.length > 0) {
                 const section = document.createElement('div');
-                section.className = 'text-section timetable-mode';
-                let timeHtml = '<div class="timeline-container">';
-                config.timetable.events.forEach((item, index) => {
-                    timeHtml += `
-                        <div class="timeline-item scroll-reveal from-bottom" style="transition-delay: ${index * 0.1}s">
-                            <div class="timeline-time">${item.time}</div>
-                            <div class="timeline-line-area"><div class="timeline-line"><div class="timeline-dot"></div></div></div>
-                            <div class="timeline-content">
-                                <h4 class="timeline-title">${item.title}</h4>
-                                <p class="timeline-desc">${item.desc}</p>
-                            </div>
+                section.className = 'text-section faq-mode';
+
+                let faqHtml = '<div class="faq-container">';
+                config.faq.items.forEach((item, index) => {
+                    faqHtml += `
+                        <div class="faq-item scroll-reveal from-bottom" style="transition-delay: ${index * 0.15}s">
+                            <div class="faq-q">${item.q}</div>
+                            <div class="faq-a">${item.a}</div>
                         </div>
                     `;
                 });
-                timeHtml += '</div>';
-                
+                faqHtml += '</div>';
+
                 section.innerHTML = `
-                    <h3 class="scroll-reveal from-left">${config.timetable.title}</h3>
-                    ${timeHtml}
+                    <h3 class="scroll-reveal from-left">${config.faq.title}</h3>
+                    <div class="section-with-illustration right-img">
+                        <div class="section-text-content">
+                            ${faqHtml}
+                        </div>
+                        <img src="./image/cat_sweat.png" class="section-illustration scroll-reveal zoom-in" style="margin-top: 1rem;" alt="Illustration">
+                    </div>
                 `;
                 lastElement.after(section);
                 lastElement = section;
             }
 
-            // 5. JOIN & RULES (Insert AFTER Time Table)
-            // To keep them compact, we wrap them in a grid container.
+            // 5. JOIN & RULES (Insert AFTER System)
             if (config.join || config.rules) {
                 const wrapper = document.createElement('div');
                 wrapper.className = 'split-section-wrapper';
-                
-                // Join Section
+
                 if (config.join) {
                     const joinSection = document.createElement('div');
                     joinSection.className = 'text-section join-mode';
-                    
+
                     let stepsHtml = '';
                     config.join.steps.forEach((step, index) => {
                         stepsHtml += `
@@ -1904,11 +2343,10 @@
                     wrapper.appendChild(joinSection);
                 }
 
-                // Rules Section
                 if (config.rules) {
                     const rulesSection = document.createElement('div');
                     rulesSection.className = 'text-section rules-mode';
-                    
+
                     let itemsHtml = '<div class="rules-list">';
                     config.rules.items.forEach((item, index) => {
                         itemsHtml += `
@@ -1931,79 +2369,89 @@
                 lastElement = wrapper;
             }
 
-            // 6. SYSTEM & MENU (Insert AFTER Join/Rules)
-            if (config.system && config.system.title && config.system.content) {
+            // 6. TIME TABLE (Insert AFTER Join/Rules)
+            if (config.timetable && config.timetable.events) {
                 const section = document.createElement('div');
-                section.className = 'text-section system-mode';
+                section.className = 'text-section timetable-mode';
+                let timeHtml = '<div class="timeline-container">';
+                config.timetable.events.forEach((item, index) => {
+                    timeHtml += `
+                        <div class="timeline-item scroll-reveal from-bottom" style="transition-delay: ${index * 0.1}s">
+                            <div class="timeline-time">${item.time}</div>
+                            <div class="timeline-line-area"><div class="timeline-line"><div class="timeline-dot"></div></div></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">${item.title}</h4>
+                                <p class="timeline-desc">${item.desc}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                timeHtml += '</div>';
+
                 section.innerHTML = `
-                    <h3 class="scroll-reveal from-left">${config.system.title}</h3>
-                    <div class="system-content scroll-reveal from-bottom">${config.system.content}</div>
+                    <h3 class="scroll-reveal from-left">${config.timetable.title}</h3>
+                    ${timeHtml}
                 `;
                 lastElement.after(section);
                 lastElement = section;
             }
 
-            // 7. STAGE INFO (Insert AFTER System)
+            // 7. VOICES (Insert AFTER Time Table)
+            if (config.voices && config.voices.items && config.voices.items.length > 0) {
+                const section = document.createElement('div');
+                section.className = 'text-section voices-mode';
+                section.style.background = 'linear-gradient(180deg, rgba(30,0,0,0.8), rgba(0,0,0,0.8))';
+                section.style.border = '1px solid var(--fire-red)';
+
+                let voicesHtml = '<div class="voices-container" style="display: flex; flex-direction: column; gap: 1.5rem;">';
+                config.voices.items.forEach((item, index) => {
+                    voicesHtml += `
+                        <div class="voice-card scroll-reveal from-bottom" style="transition-delay: ${index * 0.1}s; background: rgba(0,0,0,0.6); border-radius: 8px; padding: 1.5rem; border-left: 4px solid var(--victory-gold); box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                <div style="width: 40px; height: 40px; border-radius: 50%; background: #333; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--victory-gold);">
+                                    <i class="${item.icon}"></i>
+                                </div>
+                                <div style="font-weight: bold; color: #fff; font-size: 1.1rem; font-family: 'Zen Kaku Gothic New', sans-serif;">${item.name}</div>
+                            </div>
+                            <p style="margin: 0; color: #ddd; line-height: 1.7; font-size: 0.95rem;">${item.text}</p>
+                        </div>
+                    `;
+                });
+                voicesHtml += '</div>';
+
+                section.innerHTML = `
+                    <h3 class="scroll-reveal from-left" style="color: #fff; text-shadow: 2px 2px 0 var(--fire-red);">${config.voices.title}</h3>
+                    ${voicesHtml}
+                `;
+                lastElement.after(section);
+                lastElement = section;
+            }
+
+            // 8. STAGE INFO (ACCESS) (Insert AFTER Spirit)
             if (config.access && config.access.title && config.access.content) {
                 const section = document.createElement('div');
-                section.className = 'text-section access-mode'; 
-                
+                section.className = 'text-section access-mode';
+
                 const mapHtml = config.access.map ? `<div class="access-map scroll-reveal zoom-in" style="transition-delay: 0.2s">${config.access.map}</div>` : '';
-                
+                const imgHtml = config.access.img ? `<div class="access-photo scroll-reveal zoom-in" style="margin-top: 2rem; border-radius: 8px; overflow: hidden; border: 2px solid #333;"><img src="${config.access.img}" alt="Access Location" style="width: 100%; height: auto; display: block;"></div>` : '';
+
                 section.innerHTML = `
                     <h3 class="scroll-reveal from-left">${config.access.title}</h3>
                     <div class="access-content-wrapper">
                         <div class="access-text scroll-reveal from-bottom">${config.access.content}</div>
                         ${mapHtml}
                     </div>
+                    ${imgHtml}
                 `;
                 lastElement.after(section);
                 lastElement = section;
             }
-            /*
-            // 8. RELATED SITES (Insert AFTER Stage Info)
-            if (config.related && config.related.list && config.related.list.length > 0) {
-                const section = document.createElement('div');
-                section.className = 'text-section related-mode';
-                
-                let cardsHtml = '<div class="related-grid">';
-                config.related.list.forEach((item, index) => {
-                    const isComingSoon = item.status === 'coming_soon';
-                    const activeClass = isComingSoon ? 'coming-soon' : 'active';
-                    const linkUrl = isComingSoon ? 'javascript:void(0)' : item.url;
-                    
-                    let overlayHtml = '';
-                    if (isComingSoon) {
-                        overlayHtml = `<div class="cs-mask"><span class="cs-stamp">COMING SOON</span></div>`;
-                    }
-                    
-                    cardsHtml += `
-                        <a href="${linkUrl}" class="related-card ${activeClass} scroll-reveal zoom-in" style="transition-delay: ${index * 0.1}s">
-                            <div class="related-img-box">
-                                ${overlayHtml}
-                                <img src="${item.img}" class="related-img" alt="${item.name}">
-                            </div>
-                            <div class="related-info">
-                                <h4 class="related-name">${item.name}</h4>
-                            </div>
-                        </a>
-                    `;
-                });
-                cardsHtml += '</div>';
-                
-                section.innerHTML = `
-                    <h3 class="scroll-reveal from-left">${config.related.title}</h3>
-                    ${cardsHtml}
-                `;
-                lastElement.after(section);
-                lastElement = section;
-            }
-            */
-            // 9. ORGANIZER (Insert AFTER Related Sites) [NEW]
+
+            // 9. ORGANIZER (Insert AFTER Stage Info)
             if (config.organizer) {
                 const section = document.createElement('div');
                 section.className = 'text-section organizer-mode';
-                
+
                 section.innerHTML = `
                     <h3 class="scroll-reveal from-left">${config.organizer.title}</h3>
                     <div class="organizer-profile scroll-reveal from-bottom">
@@ -2052,54 +2500,77 @@
             }
             */
 
-            // Gallery Grid Logic
+            // Gallery (Activities) Card Logic - Changed to Alternating 2-Column Rows
             const grid = document.getElementById('gallery-grid');
+            // Remove the grid display block, just stack the sections vertically
+            grid.style.display = 'block';
+            grid.className = ''; // Remove grid styles
+
             const maxItems = 4;
 
             for (let i = 1; i <= maxItems; i++) {
                 const workConfig = config.works[i - 1] || {};
-                
+
                 let imgPath;
                 if (workConfig.file && workConfig.file.startsWith('http')) {
                     imgPath = workConfig.file;
-                  } else if (workConfig.file) {
+                } else if (workConfig.file) {
                     imgPath = `./image/${workConfig.file}`;
                 } else {
                     imgPath = `./image/image${i}.jpg`;
                 }
-                
+
                 const title = workConfig.title ? workConfig.title : `Work ${i}`;
                 const category = workConfig.category ? workConfig.category : 'Gallery';
 
-                const div = document.createElement('div');
-                // Removed scroll-reveal class to ensure visibility
-                div.className = 'work-item'; 
-                // Add minor stagger effect for grid items to look cool
-                div.style.transitionDelay = `${(i % 2) * 0.1}s`;
+                const layoutClass = i % 2 === 0 ? 'left-img' : 'right-img';
 
-                // div.style.display = 'none'; // Removed initial display none to prevent flicker with fast loading URLs
-                
+                const div = document.createElement('div');
+                div.className = 'scroll-reveal from-bottom';
+                div.style.marginBottom = '3rem';
+                div.style.background = 'rgba(0, 0, 0, 0.4)';
+                div.style.border = '1px solid #333';
+                div.style.borderRadius = '12px';
+                div.style.padding = '2rem 1rem';
+                div.style.boxShadow = '0 4px 15px rgba(0,0,0,0.5)';
+
                 div.innerHTML = `
-                    <img src="${imgPath}" class="work-img" alt="${title}" 
-                         onerror="this.style.display='none'">
-                    <div class="work-title-overlay">${title}</div>
+                    <div class="section-with-illustration ${layoutClass}">
+                        <div class="section-text-content" style="text-align: left;">
+                            <h4 style="margin: 0 0 15px 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.5rem; color: var(--victory-gold); border-left: 5px solid var(--fire-red); padding-left: 15px; font-weight: 900;">
+                                ${title}
+                            </h4>
+                            <p style="margin: 0; color: #eee; font-size: 1.05rem; line-height: 1.8;">
+                                ${category}
+                            </p>
+                        </div>
+                        <img src="${imgPath}" class="section-illustration" alt="${title}" style="transform: rotate(${i % 2 === 0 ? '-2deg' : '2deg'});">
+                    </div>
                 `;
-                
-                div.onclick = () => openModal({ title, category }, imgPath);
+
                 grid.appendChild(div);
             }
 
-            const linkList = document.getElementById('links-list');
-            config.links.forEach(link => {
-                if(!link.label) return;
-                const a = document.createElement('a');
-                a.href = link.url;
-                a.className = 'y2k-btn scroll-reveal from-bottom';
-                a.textContent = link.label;
-                a.target = "_blank";
-                a.rel = "noopener noreferrer";
-                linkList.appendChild(a);
-            });
+            // Add CLOSING Message before the footer
+            const footerArea = document.getElementById('footer-area');
+            if (config.closing && config.closing.title) {
+                const closingSection = document.createElement('div');
+                closingSection.className = 'text-section closing-mode';
+                closingSection.style.background = 'linear-gradient(135deg, var(--fire-red), #330000)';
+                closingSection.style.border = '2px solid var(--victory-gold)';
+                closingSection.style.textAlign = 'center';
+                closingSection.style.padding = '3rem 1.5rem';
+                closingSection.style.boxShadow = '0 10px 30px rgba(230,0,18,0.3)';
+
+                closingSection.innerHTML = `
+                    <h3 class="scroll-reveal from-bottom" style="border: none; display: block; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px #000; font-size: 1.8rem; text-align: center !important;">${config.closing.title}</h3>
+                    <p class="scroll-reveal from-bottom" style="transition-delay: 0.1s; font-size: 1.1rem; margin-bottom: 2rem; text-shadow: 1px 1px 2px #000; text-align: center !important;">${config.closing.message}</p>
+                    <a href="${config.closing.btnUrl}" target="_blank" class="fab-btn scroll-reveal zoom-in" style="transition-delay: 0.2s; position: static; display: inline-block; transform: none; box-shadow: 0 5px 15px rgba(0,0,0,0.8); width: 100%; max-width: 400px; padding: 15px 15px; font-size: 1.1rem; border: 2px solid #fff; box-sizing: border-box; white-space: normal; line-height: 1.4;">
+                       <i class="fa-brands fa-line"></i> ${config.closing.btnText}
+                    </a>
+                `;
+                footerArea.parentNode.insertBefore(closingSection, footerArea);
+            }
 
             // Init Scroll Observer
             initScrollObserver();
@@ -2117,7 +2588,7 @@
             }, {
                 root: null,
                 // Changed from -15% to -30% to trigger animation later (when element is more visible)
-                rootMargin: '0px 0px -10% 0px', 
+                rootMargin: '0px 0px -10% 0px',
                 threshold: 0
             });
 
@@ -2126,14 +2597,14 @@
         }
 
         const modal = document.getElementById('modal');
-        
+
         function openModal(work, imgPath) {
             document.getElementById('modal-img').src = imgPath;
             document.getElementById('modal-title').textContent = work.title;
             document.getElementById('modal-cat').textContent = `${work.category}`;
-            
+
             modal.classList.remove('active');
-            void modal.offsetWidth; 
+            void modal.offsetWidth;
             modal.classList.add('active');
         }
 
@@ -2142,4 +2613,5 @@
         }
     </script>
 </body>
+
 </html>
